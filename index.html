@@ -1,16 +1,259 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Betta Wave</title>
+
+  <title>Betta Wave Kolkata</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial;
+      transition:0.4s;
+    }
+
+    /* DARK THEME */
+
+    body.dark{
+      background:#07111f;
+      color:white;
+    }
+
+    body.dark .card{
+      background:#10243f;
+    }
+
+    body.dark header{
+      background:#0d1b2a;
+    }
+
+    body.dark .theme-btn{
+      background:#00b4ff;
+      color:white;
+    }
+
+    /* LIGHT THEME */
+
+    body.light{
+      background:#f4f4f4;
+      color:#111;
+    }
+
+    body.light .card{
+      background:white;
+      box-shadow:0 0 15px rgba(0,0,0,0.1);
+    }
+
+    body.light header{
+      background:#00a8ff;
+      color:white;
+    }
+
+    body.light .theme-btn{
+      background:#111;
+      color:white;
+    }
+
+    header{
+      padding:25px;
+      text-align:center;
+      font-size:40px;
+      font-weight:bold;
+      position:sticky;
+      top:0;
+    }
+
+    .top-section{
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .top-section h1{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .top-section p{
+      font-size:22px;
+    }
+
+    .theme-container{
+      text-align:center;
+      margin:20px;
+    }
+
+    .theme-btn{
+      border:none;
+      padding:15px 30px;
+      border-radius:30px;
+      font-size:18px;
+      cursor:pointer;
+    }
+
+    .container{
+      width:90%;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+      margin-top:30px;
+      margin-bottom:40px;
+    }
+
+    .card{
+      padding:25px;
+      border-radius:25px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h2{
+      margin-bottom:15px;
+      color:#00bfff;
+    }
+
+    .card ul{
+      line-height:2;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      font-size:18px;
+    }
+
+  </style>
+
 </head>
 
-<body style="background:#001f3f; color:white; text-align:center; font-family:Arial;">
+<body class="dark">
+
+<header>
+  Betta Wave Kolkata
+</header>
+
+<div class="theme-container">
+
+  <button class="theme-btn" onclick="toggleTheme()">
+    Change Theme
+  </button>
+
+</div>
+
+<div class="top-section">
 
   <h1>Welcome to Betta Wave Kolkata</h1>
 
-  <p>Beautiful Betta Fish and Aquarium World</p>
+  <p>
+    We assure top quality aquarium fishes, shrimps, snails and aquatic plants.
+  </p>
 
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Betta_splendens_male_crowntail.png" width="300">
+</div>
+
+<div class="container">
+
+  <div class="card">
+
+    <h2>Betta Fishes</h2>
+
+    <ul>
+      <li>Delta Betta - ₹250</li>
+      <li>OHM Betta - ₹1200</li>
+      <li>Crowntail Betta - ₹500</li>
+      <li>Plakat Betta - ₹700</li>
+    </ul>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Exotic Guppies</h2>
+
+    <ul>
+      <li>Moscow Guppy - ₹150 pair</li>
+      <li>Koi Guppy - ₹200 pair</li>
+      <li>Dragon Guppy - ₹250 pair</li>
+    </ul>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Mollies</h2>
+
+    <ul>
+      <li>Indian Balloon Molly - ₹80</li>
+      <li>Golden Molly - ₹100</li>
+      <li>Dalmatian Molly - ₹150</li>
+    </ul>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Shrimps</h2>
+
+    <ul>
+      <li>Cherry Shrimp - ₹100</li>
+      <li>Amano Shrimp - ₹150</li>
+    </ul>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Other Fishes</h2>
+
+    <ul>
+      <li>Danisoni Barb - ₹350</li>
+      <li>Oscar - ₹500</li>
+      <li>Neon Tetra - ₹60</li>
+    </ul>
+
+  </div>
+
+  <div class="card">
+
+    <h2>Plants & Snails</h2>
+
+    <ul>
+      <li>Guppy Grass - ₹100</li>
+      <li>Apple Snail - ₹80</li>
+      <li>Assassin Snail - ₹150</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<footer>
+
+  © 2026 Betta Wave Kolkata <br>
+  Premium Aquarium Fish Store
+
+</footer>
+
+<script>
+
+function toggleTheme(){
+
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+
+}
+
+</script>
 
 </body>
+
 </html>

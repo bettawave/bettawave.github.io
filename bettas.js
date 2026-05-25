@@ -3,7 +3,7 @@ const fishes = [
   {
     name:"Red splnden male",
     price:"₹600-1000",
-    image:"https://ibb.co/nqCj45jp"
+    image:"https://i.ibb.co/0ptr1dr5/red-splenden.png"
   },
    {
     name:"Red splnden female",

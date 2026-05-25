@@ -13,7 +13,7 @@ const fishes = [
 
   {
     category:"Males",
-    name:"Yellow splenden",
+    name:"Yellow Splenden",
     price:"₹800",
 
     images:[
@@ -21,14 +21,15 @@ const fishes = [
       "https://i.ibb.co/hJyHN4vh/YS2.jpg"
     ]
   },
-    {
+
+  {
     category:"Males",
     name:"Mahachai",
     price:"₹800",
 
     images:[
-     "https://i.ibb.co/4LShVsH/maha1.jpg",
-     "https://i.ibb.co/TB2jgfZq/maha2.jpg"
+      "https://i.ibb.co/4LShVsH/maha1.jpg",
+      "https://i.ibb.co/TB2jgfZq/maha2.jpg"
     ]
   },
 
@@ -54,7 +55,13 @@ fishes.forEach(fish => {
   fish.images.forEach(img => {
 
     imageHTML += `
-      <img src="${img}" class="fish-image">
+
+      <img 
+        src="${img}" 
+        class="fish-image"
+        onerror="this.style.display='none'"
+      >
+
     `;
 
   });
@@ -78,10 +85,13 @@ fishes.forEach(fish => {
   `;
 
   if(fish.category === "Females"){
+
     femaleOutput += card;
-  }
-  else{
+
+  } else {
+
     maleOutput += card;
+
   }
 
 });

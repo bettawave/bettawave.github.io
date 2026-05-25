@@ -32,6 +32,17 @@ const fishes = [
       "https://i.ibb.co/TB2jgfZq/maha2.jpg"
     ]
   },
+  {
+    category:"Males",
+    name:"Alien",
+    price:"₹800",
+
+    images:[
+      "https://i.ibb.co/84NMvK9Q/al1.jpg",
+"https://i.ibb.co/dJ3PRnXG/al2.jpg",
+"https://i.ibb.co/JWMTdWqx/al3.jpg"
+    ]
+  },
 
   {
     category:"Females",

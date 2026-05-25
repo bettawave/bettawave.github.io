@@ -21,23 +21,14 @@ const fishes = [
       "https://i.ibb.co/hJyHN4vh/YS2.jpg"
     ]
   },
-
-  {
-    category:"Males",
-    name:"Mahachai Green",
-    price:"₹800",
-
-    images:[
-      "https://i.ibb.co/WNkzGBTk/GMAHA1.jpg"
-    ]
-  },
     {
     category:"Males",
-    name:"Mahachai BLue",
+    name:"Mahachai BLue/Green",
     price:"₹800",
 
     images:[
-      "https://i.ibb.co/cKKM4dwm/BMAHA.jpg"
+      "https://i.ibb.co/844QrNs2/BMAHA.jpg",
+"https://i.ibb.co/XrwmyH7t/GMAHA1.jpg"
     ]
   },
 

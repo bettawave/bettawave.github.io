@@ -55,6 +55,17 @@ const fishes = [
   },
 
   {
+    category:"Males",
+    name:"Smaragdina guitar",
+    price:"₹1500",
+
+    images:[
+      "https://i.ibb.co/d0px4Ynx/sg1.jpg",
+"https://i.ibb.co/KzfQMBd7/sg2.jpg",
+"https://i.ibb.co/23vdYNWz/sg3.jpg"
+    ]
+  },
+  {
     category:"Females",
     name:"Red Splenden Female",
     price:"₹450",

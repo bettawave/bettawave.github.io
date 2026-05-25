@@ -1,8 +1,13 @@
 const fishes = [
 
   {
-    name:"Delta Betta",
-    price:"₹80",
+    name:"Red splnden male",
+    price:"₹600-1000",
+    image:"https://ibb.co/nqCj45jp"
+  },
+   {
+    name:"Red splnden female",
+    price:"₹450",
     image:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Betta_splendens.jpg"
   },
 

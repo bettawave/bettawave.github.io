@@ -17,7 +17,8 @@ const fishes = [
     price:"₹800",
 
     images:[
-      "https://upload.wikimedia.org/wikipedia/commons/7/76/Halfmoon_Betta.jpg"
+      "https://i.ibb.co/kV1qRXQH/Screenshot-2026-05-25-151905.jpg",
+"https://i.ibb.co/SXQJ3qL4/spadetail.jpg"
     ]
   },
 

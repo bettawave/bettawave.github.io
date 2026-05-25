@@ -28,7 +28,7 @@ const fishes = [
 
     images:[
       "https://i.ibb.co/844QrNs2/BMAHA.jpg",
-"https://i.ibb.co/XrwmyH7t/GMAHA1.jpg"
+      "https://i.ibb.co/XrwmyH7t/GMAHA1.jpg"
     ]
   },
 

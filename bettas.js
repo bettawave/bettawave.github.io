@@ -36,19 +36,32 @@ let femaleOutput = "";
 
 fishes.forEach(fish => {
 
-  const card = `
+const card = `
 
-    <div class="card">
+  <div class="card">
 
-      <img src="${fish.image}" class="fish-image">
+    <div class="image-row">
 
-      <h2>${fish.name}</h2>
-
-      <p class="price">${fish.price}</p>
+      ${
+        fish.image1
+        ? `
+          <img src="${fish.image1}" class="fish-image">
+          <img src="${fish.image2}" class="fish-image">
+        `
+        : `
+          <img src="${fish.image}" class="fish-image">
+        `
+      }
 
     </div>
 
-  `;
+    <h2>${fish.name}</h2>
+
+    <p class="price">${fish.price}</p>
+
+  </div>
+
+`;
 
   if(fish.category === "Females"){
     femaleOutput += card;

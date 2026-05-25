@@ -23,7 +23,7 @@ const fishes = [
   },
     {
     category:"Males",
-    name:"Mahachai BLue/Green",
+    name:"Mahachai",
     price:"₹800",
 
     images:[

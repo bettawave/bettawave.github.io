@@ -4,7 +4,8 @@ const fishes = [
     category:"Males",
     name:"Red Splenden Male",
     price:"₹600-1000",
-    image:"https://i.ibb.co/5gwF1JFS/red-splenden.jpg"
+    image1:"https://i.ibb.co/JwQ0TdJF/benjo.jpg",
+    image2:"https://i.ibb.co/SwzHMvNf/red-splenden.jpg"
   },
 
   {

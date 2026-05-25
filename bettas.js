@@ -67,7 +67,7 @@ const fishes = [
   },
   {
     category:"Females",
-    name:"Red Splenden Female",
+    name:"Red Splenden, Yellow splenden, Mahachai, Alien, Imbellis, Smaragdina guitar Female",
     price:"₹450",
 
     images:[

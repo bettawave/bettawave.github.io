@@ -17,8 +17,8 @@ const fishes = [
     price:"₹800",
 
     images:[
-      "https://i.ibb.co/kV1qRXQH/Screenshot-2026-05-25-151905.jpg",
-"https://i.ibb.co/SXQJ3qL4/spadetail.jpg"
+      "https://i.ibb.co/hxhRQv0B/YS1.jpg",
+"https://i.ibb.co/svVLsnJG/YS2.jpg"
     ]
   },
 

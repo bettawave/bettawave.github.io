@@ -24,11 +24,20 @@ const fishes = [
 
   {
     category:"Males",
-    name:"Crowntail Betta",
-    price:"₹200-350",
+    name:"Mahachai Green",
+    price:"₹800",
 
     images:[
-      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Crowntail_betta.jpg"
+      "https://i.ibb.co/WNkzGBTk/GMAHA1.jpg"
+    ]
+  },
+    {
+    category:"Males",
+    name:"Mahachai BLue",
+    price:"₹800",
+
+    images:[
+      "https://i.ibb.co/cKKM4dwm/BMAHA.jpg"
     ]
   },
 

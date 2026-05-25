@@ -13,8 +13,8 @@ const fishes = [
 
   {
     category:"Males",
-    name:"OHM Betta",
-    price:"₹100-300",
+    name:"Yellow splenden",
+    price:"₹800",
 
     images:[
       "https://upload.wikimedia.org/wikipedia/commons/7/76/Halfmoon_Betta.jpg"

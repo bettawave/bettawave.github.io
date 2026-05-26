@@ -103,21 +103,21 @@ const fishes = [
 
     images:[
       "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
-"https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
-"https://i.ibb.co/BHp1WVJp/ohm3.jpg",
-"https://i.ibb.co/LmM78FH/ohm4.jpg",
+      "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
+      "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
+      "https://i.ibb.co/LmM78FH/ohm4.jpg",
       "https://i.ibb.co/jZDd8BcT/cohm.jpg"
     ]
   },
 
   {
-    section:"Dumbo ear OHMs",
+    section:"Dumbo Ear OHMs",
 
-    name:"Dumbo ear OHM",
+    name:"Dumbo Ear OHM",
 
     pair:"₹500",
     male:"₹350",
-    female:"₹200", 
+    female:"₹200",
 
     images:[
       "https://i.ibb.co/r205DHb9/DOHM.jpg",

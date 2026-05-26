@@ -1,14 +1,15 @@
-const delta = [
+const fishes = [
 
   {
     name:"Delta Tail Betta",
 
-    pair:"₹150",
-    male:"₹80",
-    female:"₹80",
+    pair:"₹150-300",
+    male:"₹80-180",
+    female:"₹80-120",
 
     images:[
-      "https://upload.wikimedia.org/wikipedia/commons/0/0e/Betta_splendens.jpg"
+      "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
+      "https://i.ibb.co/nqRSLg6V/dt2.jpg"
     ]
   }
 
@@ -16,14 +17,20 @@ const delta = [
 
 let output = "";
 
-delta.forEach(fish => {
+fishes.forEach(fish => {
 
   let imageHTML = "";
 
   fish.images.forEach(img => {
 
     imageHTML += `
-      <img src="${img}" class="fish-image">
+
+      <img
+        src="${img}"
+        class="fish-image"
+        onerror="this.style.display='none'"
+      >
+
     `;
 
   });
@@ -33,7 +40,9 @@ delta.forEach(fish => {
     <div class="card">
 
       <div class="image-grid">
+
         ${imageHTML}
+
       </div>
 
       <h2>${fish.name}</h2>
@@ -41,7 +50,9 @@ delta.forEach(fish => {
       <div class="price-box">
 
         <p><b>Pair:</b> ${fish.pair}</p>
+
         <p><b>Male:</b> ${fish.male}</p>
+
         <p><b>Female:</b> ${fish.female}</p>
 
       </div>

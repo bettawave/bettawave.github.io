@@ -1,4 +1,4 @@
-const ohms = [
+const fishes = [
 
   {
     name:"OHM Betta",
@@ -11,7 +11,8 @@ const ohms = [
       "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
       "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
       "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
-      "https://i.ibb.co/LmM78FH/ohm4.jpg"
+      "https://i.ibb.co/LmM78FH/ohm4.jpg",
+      "https://i.ibb.co/jZDd8BcT/cohm.jpg"
     ]
   }
 
@@ -19,14 +20,20 @@ const ohms = [
 
 let output = "";
 
-ohms.forEach(fish => {
+fishes.forEach(fish => {
 
   let imageHTML = "";
 
   fish.images.forEach(img => {
 
     imageHTML += `
-      <img src="${img}" class="fish-image">
+
+      <img
+        src="${img}"
+        class="fish-image"
+        onerror="this.style.display='none'"
+      >
+
     `;
 
   });
@@ -36,7 +43,9 @@ ohms.forEach(fish => {
     <div class="card">
 
       <div class="image-grid">
+
         ${imageHTML}
+
       </div>
 
       <h2>${fish.name}</h2>
@@ -44,7 +53,9 @@ ohms.forEach(fish => {
       <div class="price-box">
 
         <p><b>Pair:</b> ${fish.pair}</p>
+
         <p><b>Male:</b> ${fish.male}</p>
+
         <p><b>Female:</b> ${fish.female}</p>
 
       </div>

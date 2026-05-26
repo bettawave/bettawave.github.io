@@ -97,12 +97,15 @@ const fishes = [
 
     name:"OHM Betta",
 
-    pair:"₹400-500",
-    male:"₹100-300",
-    female:"₹150",
+    pair:"₹250-500",
+    male:"₹150-300",
+    female:"₹80-150",
 
     images:[
-      "https://upload.wikimedia.org/wikipedia/commons/7/76/Halfmoon_Betta.jpg"
+      "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
+"https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
+"https://i.ibb.co/BHp1WVJp/ohm3.jpg",
+"https://i.ibb.co/LmM78FH/ohm4.jpg"
     ]
   },
 

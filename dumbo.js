@@ -1,7 +1,7 @@
 const dumbo = [
 
   {
-    name:"Dumbo Ear OHM",
+    name:"Dumbo Ear OHM and plakats",
 
     pair:"₹500",
     male:"₹350",

@@ -6,6 +6,26 @@ body{
   color:white;
 }
 
+/* HEADER (UPDATED BIG BRAND STYLE) */
+header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px 25px;
+  background:#162033;
+  font-size:36px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+/* BIG LOGO */
+.logo{
+  width:85px;
+  height:85px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
 /* INFO SECTION */
 .info-section{
   margin:40px;
@@ -45,16 +65,6 @@ body{
   text-decoration:underline;
 }
 
-/* LOGO */
-.logo{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit:cover;
-  margin-right:10px;
-  vertical-align:middle;
-}
-
 /* CARDS */
 .card{
   background:#162033;
@@ -77,7 +87,7 @@ body{
   margin-top:10px;
 }
 
-/* WHATSAPP BOX (NEW ADDITION) */
+/* WHATSAPP BOX */
 .whatsapp-box{
   display:flex;
   align-items:center;

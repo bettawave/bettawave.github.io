@@ -8,10 +8,10 @@ const fishes = [
     female:"₹200",
 
     images:[
-     "https://i.ibb.co/zWqDcmTt/dohm.jpg",
-"https://i.ibb.co/Y46nbmQ3/dohmw.jpg",
-"https://i.ibb.co/yFDYgH4M/dumbogoldpk.jpg",
-"https://i.ibb.co/XxDtSdv4/dumbpk.jpg"
+     "https://i.ibb.co/M5pc6npG/dum1.jpg",
+"https://i.ibb.co/Zp6SpY67/dum2.jpg",
+"https://i.ibb.co/GQQF86wF/dum3.jpg",
+"https://i.ibb.co/674jwWP6/dum4.jpg"
     ]
   }
 

@@ -105,21 +105,22 @@ const fishes = [
       "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
 "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
 "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
-"https://i.ibb.co/LmM78FH/ohm4.jpg"
+"https://i.ibb.co/LmM78FH/ohm4.jpg",
+      "https://i.ibb.co/jZDd8BcT/cohm.jpg"
     ]
   },
 
   {
-    section:"Crowntail OHMs",
+    section:"Dumbo ear OHMs",
 
-    name:"Crowntail Betta",
+    name:"Dumbo ear OHM",
 
-    pair:"₹500-700",
-    male:"₹200-350",
-    female:"₹200",
+    pair:"₹500",
+    male:"₹350"
 
     images:[
-      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Crowntail_betta.jpg"
+      "https://i.ibb.co/r205DHb9/DOHM.jpg",
+  "https://i.ibb.co/GQNJqVFZ/dohmw.jpg"
     ]
   },
 

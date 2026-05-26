@@ -16,9 +16,9 @@ const fishes = [
   {
     name:"Nemo Candy HMPK",
 
-    pair:"₹1200-2200",
-    male:"₹800-1600",
-    female:"₹400-700",
+    pair:"₹400-1500",
+    male:"₹250-1300",
+    female:"₹120-400",
 
     images:[
       "https://i.ibb.co/spR16phC/nc1.jpg",

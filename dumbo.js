@@ -8,7 +8,7 @@ const dumbo = [
     female:"₹200",
 
     images:[
-      "https://i.ibb.co/GfzLKrSJ/DOHM.jpg"
+      "https://i.ibb.co/8grNzPYk/dumbogoldpk.jpg"
     ]
   }
 

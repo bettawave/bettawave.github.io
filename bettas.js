@@ -116,7 +116,7 @@ const fishes = [
     name:"Dumbo ear OHM",
 
     pair:"₹500",
-    male:"₹350"
+    male:"₹350",
 
     images:[
       "https://i.ibb.co/r205DHb9/DOHM.jpg",

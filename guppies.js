@@ -3,13 +3,13 @@ const guppies = [
   {
     name: "Albino Topaz White",
     image: "https://i.ibb.co/VYkcKTZk/atw1.jpg",
-    price: "₹200 / Pair"
+    price: "₹180 / Pair"
   },
 
   {
     name: "Blue Dragon",
     image: "https://i.ibb.co/Kz0gYdhF/bd1.jpg",
-    price: "₹200 / Pair"
+    price: "₹150 / Pair"
   },
 
   {
@@ -21,7 +21,7 @@ const guppies = [
   {
     name: "Chilli Mosaic",
     image: "https://i.ibb.co/BH4ZRg0X/cm1.jpg",
-    price: "₹200 / Pair"
+    price: "₹150 / Pair"
   },
 
   {
@@ -45,7 +45,7 @@ const guppies = [
   {
     name: "Red Topaz",
     image: "https://i.ibb.co/XZ9m5LQR/red-topaz.jpg",
-    price: "₹200 / Pair"
+    price: "₹150 / Pair"
   },
 
   {
@@ -57,7 +57,7 @@ const guppies = [
   {
     name: "White Tuxedo",
     image: "https://i.ibb.co/GQppmfbG/wt1.jpg",
-    price: "₹200 / Pair"
+    price: "₹100 / Pair"
   }
 
 ];

@@ -9,7 +9,6 @@ const dumbo = [
 
     images:[
       "https://i.ibb.co/rKQKYFg3/whitedumbpk.jpg",
-      "https://i.ibb.co/Wvt4FSxk/dohmw.jpg",
       "https://i.ibb.co/GfzLKrSJ/DOHM.jpg",
       "https://i.ibb.co/6cKhqcFP/dumbogoldpk.jpg"
     ]

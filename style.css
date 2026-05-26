@@ -55,7 +55,7 @@ body{
   vertical-align:middle;
 }
 
-/* CARDS (important for consistency) */
+/* CARDS */
 .card{
   background:#162033;
   border-radius:15px;
@@ -69,9 +69,43 @@ body{
   transform:translateY(-5px);
 }
 
+/* PRICE */
 .price{
   color:#00ff99;
   font-size:20px;
   font-weight:bold;
   margin-top:10px;
+}
+
+/* WHATSAPP BOX (NEW ADDITION) */
+.whatsapp-box{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin:15px 0;
+}
+
+.qr{
+  width:180px;
+  border-radius:10px;
+}
+
+.wa-link p{
+  margin:0 0 10px 0;
+  font-size:16px;
+}
+
+.wa-link a{
+  display:inline-block;
+  padding:10px 15px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+.wa-link a:hover{
+  background:#1ebe5d;
 }

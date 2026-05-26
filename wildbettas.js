@@ -38,6 +38,7 @@ const fishes = [
       "https://i.ibb.co/TB2jgfZq/maha2.jpg"
     ]
   },
+
   {
     name:"Imbellis",
 
@@ -47,9 +48,10 @@ const fishes = [
 
     images:[
       "https://i.ibb.co/4wTYLSXK/imb1.jpg",
-"https://i.ibb.co/67XbkXnP/imb2.jpg",
+      "https://i.ibb.co/67XbkXnP/imb2.jpg"
     ]
   },
+
   {
     name:"Alien",
 
@@ -59,27 +61,25 @@ const fishes = [
 
     images:[
       "https://i.ibb.co/j9f3Kfsb/al1.jpg",
-"https://i.ibb.co/jj7kWBF/al2.jpg",
-"https://i.ibb.co/JjTvvDFW/al3.jpg",
+      "https://i.ibb.co/jj7kWBF/al2.jpg",
+      "https://i.ibb.co/JjTvvDFW/al3.jpg"
     ]
   },
 
-  
   {
-    name:"Smaragdina guitar",
+    name:"Smaragdina Guitar",
 
     pair:"₹1500-2000",
     male:"₹1100-1700",
     female:"₹450",
 
     images:[
-     "https://i.ibb.co/0pJZHrRy/sg1.jpg",
-"https://i.ibb.co/JjxbrFJR/sg2.jpg",
-"https://i.ibb.co/PGLrZVCB/sg3.jpg",
+      "https://i.ibb.co/0pJZHrRy/sg1.jpg",
+      "https://i.ibb.co/JjxbrFJR/sg2.jpg",
+      "https://i.ibb.co/PGLrZVCB/sg3.jpg"
     ]
-  },
+  }
 
-  
 ];
 
 let output = "";
@@ -91,7 +91,13 @@ fishes.forEach(fish => {
   fish.images.forEach(img => {
 
     imageHTML += `
-      <img src="${img}" class="fish-image">
+
+      <img
+        src="${img}"
+        class="fish-image"
+        onerror="this.style.display='none'"
+      >
+
     `;
 
   });
@@ -101,7 +107,9 @@ fishes.forEach(fish => {
     <div class="card">
 
       <div class="image-grid">
+
         ${imageHTML}
+
       </div>
 
       <h2>${fish.name}</h2>
@@ -109,7 +117,9 @@ fishes.forEach(fish => {
       <div class="price-box">
 
         <p><b>Pair:</b> ${fish.pair}</p>
+
         <p><b>Male:</b> ${fish.male}</p>
+
         <p><b>Female:</b> ${fish.female}</p>
 
       </div>

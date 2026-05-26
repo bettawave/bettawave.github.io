@@ -121,7 +121,7 @@ const fishes = [
 
     images:[
       "https://i.ibb.co/r205DHb9/DOHM.jpg",
-  "https://i.ibb.co/GQNJqVFZ/dohmw.jpg"
+      "https://i.ibb.co/GQNJqVFZ/dohmw.jpg"
     ]
   },
 
@@ -132,7 +132,7 @@ const fishes = [
 
     pair:"₹500 onwards",
     male:"₹200 onwards",
-    female:"₹200",
+    female:"₹200 onwards",
 
     images:[
       "https://upload.wikimedia.org/wikipedia/commons/0/0e/Betta_splendens.jpg"

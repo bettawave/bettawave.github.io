@@ -8,9 +8,7 @@ const dumbo = [
     female:"₹200",
 
     images:[
-      "https://i.ibb.co/rKQKYFg3/whitedumbpk.jpg",
-      "https://i.ibb.co/GfzLKrSJ/DOHM.jpg",
-      "https://i.ibb.co/6cKhqcFP/dumbogoldpk.jpg"
+      "https://i.ibb.co/GfzLKrSJ/DOHM.jpg"
     ]
   }
 
@@ -25,13 +23,10 @@ dumbo.forEach(fish => {
   fish.images.forEach(img => {
 
     imageHTML += `
-
       <img
         src="${img}"
         class="fish-image"
-        onerror="this.style.display='none'"
       >
-
     `;
 
   });

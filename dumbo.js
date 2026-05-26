@@ -1,14 +1,16 @@
-const dumbo = [
+const fishes = [
 
   {
-    name: "Dumbo Ear OHM and Plakats",
+    name:"Dumbo Ear OHM and Plakats",
 
-    pair: "₹500",
-    male: "₹350",
-    female: "₹200",
+    pair:"₹500",
+    male:"₹350",
+    female:"₹200",
 
-    images: [
-      "https://i.ibb.co/HprsgZ2T/DOHM.jpg"
+    images:[
+      "https://i.ibb.co/hFSY7Q0Z/DOHM.jpg",
+      "https://i.ibb.co/r2vwFHwh/dohmw.jpg",
+      "https://i.ibb.co/B2N16yMS/dumbogoldpk.jpg"
     ]
   }
 
@@ -16,7 +18,23 @@ const dumbo = [
 
 let output = "";
 
-dumbo.forEach(fish => {
+fishes.forEach(fish => {
+
+  let imageHTML = "";
+
+  fish.images.forEach(img => {
+
+    imageHTML += `
+
+      <img
+        src="${img}"
+        class="fish-image"
+        onerror="this.style.display='none'"
+      >
+
+    `;
+
+  });
 
   output += `
 
@@ -24,10 +42,7 @@ dumbo.forEach(fish => {
 
       <div class="image-grid">
 
-        <img
-          src="${fish.images[0]}"
-          class="fish-image"
-        >
+        ${imageHTML}
 
       </div>
 

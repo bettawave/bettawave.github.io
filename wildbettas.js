@@ -29,13 +29,25 @@ const fishes = [
   {
     name:"Mahachai",
 
-    pair:"₹1200",
-    male:"₹800",
+    pair:"₹1000-2000",
+    male:"₹800-1600",
     female:"₹450",
 
     images:[
       "https://i.ibb.co/4LShVsH/maha1.jpg",
       "https://i.ibb.co/TB2jgfZq/maha2.jpg"
+    ]
+  },
+  {
+    name:"Imbellis",
+
+    pair:"₹1000-2000",
+    male:"₹800-1600",
+    female:"₹450",
+
+    images:[
+      "https://i.ibb.co/4wTYLSXK/imb1.jpg",
+"https://i.ibb.co/67XbkXnP/imb2.jpg",
     ]
   }
 

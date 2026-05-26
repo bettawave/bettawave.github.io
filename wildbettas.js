@@ -64,6 +64,22 @@ const fishes = [
     ]
   },
 
+  
+  {
+    name:"Smaragdina guitar",
+
+    pair:"₹1500-2000",
+    male:"₹1100-1700",
+    female:"₹450",
+
+    images:[
+     "https://i.ibb.co/0pJZHrRy/sg1.jpg",
+"https://i.ibb.co/JjxbrFJR/sg2.jpg",
+"https://i.ibb.co/PGLrZVCB/sg3.jpg",
+    ]
+  },
+
+  
 ];
 
 let output = "";

@@ -33,3 +33,37 @@ fishes.forEach(fish => {
         class="fish-image"
         onerror="this.style.display='none'"
       >
+
+    `;
+
+  });
+
+  output += `
+
+    <div class="card">
+
+      <div class="image-grid">
+
+        ${imageHTML}
+
+      </div>
+
+      <h2>${fish.name}</h2>
+
+      <div class="price-box">
+
+        <p><b>Pair:</b> ${fish.pair}</p>
+
+        <p><b>Male:</b> ${fish.male}</p>
+
+        <p><b>Female:</b> ${fish.female}</p>
+
+      </div>
+
+    </div>
+
+  `;
+
+});
+
+document.getElementById("crowntail-container").innerHTML = output;

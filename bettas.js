@@ -1,9 +1,13 @@
 const fishes = [
 
   {
-    category:"Males",
-    name:"Red Splenden Male",
-    price:"₹600-1000",
+    section:"Wild Bettas",
+
+    name:"Red Splenden",
+
+    pair:"₹1000-1500",
+    male:"₹600-1000",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/JwQ0TdJF/benjo.jpg",
@@ -12,9 +16,13 @@ const fishes = [
   },
 
   {
-    category:"Males",
+    section:"Wild Bettas",
+
     name:"Yellow Splenden",
-    price:"₹800",
+
+    pair:"₹1200",
+    male:"₹800",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/sp1pjxHn/YS1.jpg",
@@ -23,52 +31,117 @@ const fishes = [
   },
 
   {
-    category:"Males",
+    section:"Wild Bettas",
+
     name:"Mahachai",
-    price:"₹800",
+
+    pair:"₹1200",
+    male:"₹800",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/4LShVsH/maha1.jpg",
       "https://i.ibb.co/TB2jgfZq/maha2.jpg"
     ]
   },
+
   {
-    category:"Males",
-    name:"Alien male",
-    price:"₹800",
+    section:"Wild Bettas",
+
+    name:"Alien Betta",
+
+    pair:"₹1000-1200",
+    male:"₹800",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/84NMvK9Q/al1.jpg",
-"https://i.ibb.co/dJ3PRnXG/al2.jpg",
-"https://i.ibb.co/JWMTdWqx/al3.jpg"
+      "https://i.ibb.co/dJ3PRnXG/al2.jpg",
+      "https://i.ibb.co/JWMTdWqx/al3.jpg"
     ]
   },
+
   {
-    category:"Males",
-    name:"Imbellis male",
-    price:"₹600-1000",
+    section:"Wild Bettas",
+
+    name:"Imbellis",
+
+    pair:"₹1000-1500",
+    male:"₹600-1000",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/chx3JzBG/imb1.jpg",
-"https://i.ibb.co/Hf5R67Sp/imb2.jpg"
+      "https://i.ibb.co/Hf5R67Sp/imb2.jpg"
     ]
   },
 
   {
-    category:"Males",
-    name:"Smaragdina guitar",
-    price:"₹1500",
+    section:"Wild Bettas",
+
+    name:"Smaragdina Guitar",
+
+    pair:"₹1800-2200",
+    male:"₹1500",
+    female:"₹450",
 
     images:[
       "https://i.ibb.co/d0px4Ynx/sg1.jpg",
-"https://i.ibb.co/KzfQMBd7/sg2.jpg",
-"https://i.ibb.co/23vdYNWz/sg3.jpg"
+      "https://i.ibb.co/KzfQMBd7/sg2.jpg",
+      "https://i.ibb.co/23vdYNWz/sg3.jpg"
     ]
   },
+
   {
-    category:"Females",
-    name:"Red Splenden, Yellow splenden, Mahachai, Alien, Imbellis, Smaragdina guitar Female",
-    price:"₹450",
+    section:"OHM Bettas",
+
+    name:"OHM Betta",
+
+    pair:"₹400-500",
+    male:"₹100-300",
+    female:"₹150",
+
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/7/76/Halfmoon_Betta.jpg"
+    ]
+  },
+
+  {
+    section:"Crowntail OHMs",
+
+    name:"Crowntail Betta",
+
+    pair:"₹500-700",
+    male:"₹200-350",
+    female:"₹200",
+
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/5/5f/Crowntail_betta.jpg"
+    ]
+  },
+
+  {
+    section:"Plakats",
+
+    name:"HMPK Betta",
+
+    pair:"₹500 onwards",
+    male:"₹200 onwards",
+    female:"₹200",
+
+    images:[
+      "https://upload.wikimedia.org/wikipedia/commons/0/0e/Betta_splendens.jpg"
+    ]
+  },
+
+  {
+    section:"Delta Tail",
+
+    name:"Delta Tail Betta",
+
+    pair:"₹150",
+    male:"₹80",
+    female:"₹80",
 
     images:[
       "https://upload.wikimedia.org/wikipedia/commons/0/0e/Betta_splendens.jpg"
@@ -77,10 +150,13 @@ const fishes = [
 
 ];
 
-let maleOutput = "";
-let femaleOutput = "";
+const sections = {};
 
 fishes.forEach(fish => {
+
+  if(!sections[fish.section]){
+    sections[fish.section] = "";
+  }
 
   let imageHTML = "";
 
@@ -88,8 +164,8 @@ fishes.forEach(fish => {
 
     imageHTML += `
 
-      <img 
-        src="${img}" 
+      <img
+        src="${img}"
         class="fish-image"
         onerror="this.style.display='none'"
       >
@@ -98,7 +174,7 @@ fishes.forEach(fish => {
 
   });
 
-  const card = `
+  sections[fish.section] += `
 
     <div class="card">
 
@@ -110,36 +186,38 @@ fishes.forEach(fish => {
 
       <h2>${fish.name}</h2>
 
-      <p class="price">${fish.price}</p>
+      <div class="price-box">
+
+        <p><b>Pair:</b> ${fish.pair}</p>
+
+        <p><b>Male:</b> ${fish.male}</p>
+
+        <p><b>Female:</b> ${fish.female}</p>
+
+      </div>
 
     </div>
 
   `;
 
-  if(fish.category === "Females"){
-
-    femaleOutput += card;
-
-  } else {
-
-    maleOutput += card;
-
-  }
-
 });
 
-document.getElementById("fish-container").innerHTML = `
+let finalHTML = "";
 
-  <h1 class="section-title">Male Bettas</h1>
+for(const sectionName in sections){
 
-  <div class="container">
-    ${maleOutput}
-  </div>
+  finalHTML += `
 
-  <h1 class="section-title">Female Bettas</h1>
+    <h1 class="section-title">${sectionName}</h1>
 
-  <div class="container">
-    ${femaleOutput}
-  </div>
+    <div class="container">
 
-`;
+      ${sections[sectionName]}
+
+    </div>
+
+  `;
+
+}
+
+document.getElementById("fish-container").innerHTML = finalHTML;

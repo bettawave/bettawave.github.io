@@ -6,24 +6,29 @@ body{
   color:white;
 }
 
-/* HEADER (UPDATED BIG BRAND STYLE) */
+/* HEADER (BIG TOP BRAND STYLE) */
 header{
   display:flex;
   align-items:center;
-  gap:15px;
-  padding:15px 25px;
+  gap:20px;
+  padding:20px 25px;
   background:#162033;
-  font-size:36px;
-  font-weight:bold;
-  letter-spacing:1px;
 }
 
 /* BIG LOGO */
 .logo{
-  width:85px;
-  height:85px;
+  width:110px;
+  height:110px;
   border-radius:50%;
   object-fit:cover;
+}
+
+/* BIG BRAND TEXT */
+header span{
+  font-size:42px;
+  font-weight:800;
+  color:white;
+  letter-spacing:1px;
 }
 
 /* INFO SECTION */

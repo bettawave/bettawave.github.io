@@ -49,7 +49,20 @@ const fishes = [
       "https://i.ibb.co/4wTYLSXK/imb1.jpg",
 "https://i.ibb.co/67XbkXnP/imb2.jpg",
     ]
-  }
+  },
+  {
+    name:"Alien",
+
+    pair:"₹1000-1500",
+    male:"₹600-1000",
+    female:"₹450",
+
+    images:[
+      "https://i.ibb.co/j9f3Kfsb/al1.jpg",
+"https://i.ibb.co/jj7kWBF/al2.jpg",
+"https://i.ibb.co/JjTvvDFW/al3.jpg",
+    ]
+  },
 
 ];
 

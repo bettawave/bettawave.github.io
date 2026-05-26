@@ -8,8 +8,10 @@ const dumbo = [
     female:"₹200",
 
     images:[
-      "https://i.ibb.co/r205DHb9/DOHM.jpg",
-      "https://i.ibb.co/GQNJqVFZ/dohmw.jpg"
+      "https://i.ibb.co/GfzLKrSJ/DOHM.jpg",
+"https://i.ibb.co/Wvt4FSxk/dohmw.jpg",
+"https://i.ibb.co/6cKhqcFP/dumbogoldpk.jpg",
+      "https://i.ibb.co/cc4xr56m/whitedumbpk.jpg",
     ]
   }
 

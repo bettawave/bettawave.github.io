@@ -117,6 +117,7 @@ const fishes = [
 
     pair:"₹500",
     male:"₹350",
+    female:"₹200", 
 
     images:[
       "https://i.ibb.co/r205DHb9/DOHM.jpg",

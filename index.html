@@ -18,49 +18,83 @@
   <p>Top quality fishes, shrimps, snails and aquatic plants.</p>
 </div>
 
+<!-- SEARCH BAR -->
+
+<div class="search-box">
+
+  <input 
+    type="text" 
+    id="searchInput"
+    placeholder="Search Bettas, Guppies, Mollies..."
+  >
+
+  <button onclick="searchFish()">
+    Search
+  </button>
+
+</div>
+
+<p id="notFound"></p>
+
+<!-- CARDS -->
+
 <div class="container">
 
   <a href="catalogue.html" class="card-link">
 
-  <div class="card">
+    <div class="card">
 
-    <h2>Fish Catalogue</h2>
+      <h2>Fish Catalogue</h2>
 
-    <p>
-      View complete fish price list and collection
-    </p>
+      <p>
+        View complete fish price list and collection
+      </p>
 
-  </div>
+    </div>
 
-</a>
+  </a>
 
   <a href="fishes.html" class="card-link">
+
     <div class="card">
+
       <h2>Fresh Water Fishes</h2>
-      <p>Bettas, Guppies, Mollies and more</p>
+
+      <p>
+        Bettas, Guppies, Mollies and more
+      </p>
+
     </div>
+
   </a>
 
   <div class="card">
+
     <h2>Fresh Water Plants</h2>
-    <p>Coming Soon</p>
+
+    <p>
+      Coming Soon
+    </p>
+
   </div>
 
   <a href="snails.html" class="card-link">
 
-  <div class="card">
+    <div class="card">
 
-    <h2>Shrimps & Snails</h2>
+      <h2>Shrimps & Snails</h2>
 
-    <p>
-      Snails, shrimps and more
-    </p>
+      <p>
+        Snails, shrimps and more
+      </p>
 
-  </div>
+    </div>
 
-</a>
+  </a>
 
 </div>
+
+<!-- INFO SECTION -->
 
 <div class="info-section">
 
@@ -86,23 +120,34 @@
 
   <p>
     📘 Facebook Profile:
-    <a href="https://www.facebook.com/profile.php?id=61580582362168" target="_blank">Click Here</a>
+    <a href="https://www.facebook.com/profile.php?id=61580582362168" target="_blank">
+      Click Here
+    </a>
   </p>
 
   <p>
     📄 Facebook Page:
-    <a href="https://www.facebook.com/profile.php?id=61572031530480" target="_blank">Click Here</a>
+    <a href="https://www.facebook.com/profile.php?id=61572031530480" target="_blank">
+      Click Here
+    </a>
   </p>
 
   <p>
     ▶️ YouTube Channel:
-    <a href="https://youtube.com/@bettawavekolkata?si=Cvyk3IniHwGrrgjf" target="_blank">Subscribe Here</a>
+    <a href="https://youtube.com/@bettawavekolkata?si=Cvyk3IniHwGrrgjf" target="_blank">
+      Subscribe Here
+    </a>
   </p>
 
   <h2>Contact Information</h2>
 
-  <p>📞 9147731025, 8104266402 (WhatsApp Only)</p>
-  <p>📧 soumajinth@gmail.com</p>
+  <p>
+    📞 9147731025, 8104266402 (WhatsApp Only)
+  </p>
+
+  <p>
+    📧 soumajinth@gmail.com
+  </p>
 
   <h2>Important Information</h2>
 
@@ -127,6 +172,55 @@
 <footer>
   © 2026 Betta Wave Kolkata
 </footer>
+
+<!-- SEARCH SCRIPT -->
+
+<script>
+
+function searchFish(){
+
+  let input = document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  if(
+    input.includes("betta") ||
+    input.includes("wild") ||
+    input.includes("exotic betta")
+  ){
+    window.location.href = "fishes.html";
+  }
+
+  else if(
+    input.includes("guppy") ||
+    input.includes("exotic guppy")
+  ){
+    window.location.href = "guppies.html";
+  }
+
+  else if(
+    input.includes("molly") ||
+    input.includes("exotic molly")
+  ){
+    window.location.href = "mollies.html";
+  }
+
+  else if(
+    input.includes("shrimp") ||
+    input.includes("snail")
+  ){
+    window.location.href = "snails.html";
+  }
+
+  else{
+    document.getElementById("notFound").innerHTML =
+      "❌ Fish not found";
+  }
+
+}
+
+</script>
 
 </body>
 

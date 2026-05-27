@@ -20,19 +20,19 @@ const snails = [
 
   {
     name: "Apple Snail",
-    image: "https://i.ibb.co/placeholder/goldenapple.jpg",
+    image: "https://i.ibb.co/1jnFZwW/apps1.jpg",
     price: "₹35 / piece"
   },
   {
-    name: "Assasin Snail",
-    image: "https://i.ibb.co/placeholder/goldenapple.jpg",
+    name: "Assassin Snail",
+    image: "https://i.ibb.co/C3xWz98Y/assasin1.jpg",
     price: "₹60 / piece"
   },
   
 
   {
-    name: "Nerite Snail",
-    image: "https://i.ibb.co/placeholder/nerite.jpg",
+    name: "Spotted nerite Snail",
+    image: "https://i.ibb.co/spV7TYVY/spotner.jpg",
     price: "₹150 / piece"
   }
 

@@ -12,6 +12,10 @@
 
   <style>
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     .catalogue-section{
       margin:40px;
       padding:30px;
@@ -52,6 +56,8 @@
       margin-bottom:15px;
       border-radius:12px;
       transition:0.3s;
+      flex-wrap:wrap;
+      gap:15px;
     }
 
     .catalogue-item:hover{
@@ -59,21 +65,31 @@
       box-shadow:0 4px 10px rgba(0,0,0,0.4);
     }
 
-    .catalogue-item a{
-      color:#ffffff;
-      text-decoration:none;
+    .fish-name{
+      color:white;
       font-size:22px;
       font-weight:bold;
-    }
-
-    .catalogue-item a:hover{
-      color:#00d9ff;
+      flex:1;
     }
 
     .price{
       color:#00ff99;
       font-size:22px;
       font-weight:bold;
+    }
+
+    .view-btn{
+      background:#00d9ff;
+      color:white;
+      text-decoration:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .view-btn:hover{
+      background:#00b8d4;
     }
 
   </style>
@@ -97,7 +113,7 @@
   </h1>
 
   <p class="catalogue-subtitle">
-    Click on fish names to view images or videos
+    Click View to directly open that fish collection
   </p>
 
   <!-- BETTAS -->
@@ -105,22 +121,27 @@
   <h2 class="category-title">Bettas</h2>
 
   <div class="catalogue-item">
-    <a href="bettas.html">Over Halfmoon (OHM) Betta</a>
+    <span class="fish-name">Over Halfmoon (OHM) Betta</span>
     <span class="price">₹100 onwards</span>
+    <a href="bettas.html" class="view-btn">View</a>
   </div>
+
   <div class="catalogue-item">
-    <a href="bettas.html">Wild Bettas</a>
+    <span class="fish-name">Wild Bettas</span>
     <span class="price">₹400 onwards</span>
+    <a href="bettas.html" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="bettas.html">Crowntail Betta</a>
+    <span class="fish-name">Crowntail Betta</span>
     <span class="price">₹200 onwards</span>
+    <a href="bettas.html" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="bettas.html">HMPK Betta</a>
+    <span class="fish-name">HMPK Betta</span>
     <span class="price">₹200 onwards</span>
+    <a href="bettas.html" class="view-btn">View</a>
   </div>
 
   <!-- GUPPIES -->
@@ -128,66 +149,79 @@
   <h2 class="category-title">Guppies</h2>
 
   <div class="catalogue-item">
-    <a href="guppies.html">Blue Dragon Guppy</a>
+    <span class="fish-name">Blue Dragon Guppy</span>
     <span class="price">₹150 / Pair</span>
+    <a href="guppies.html#bluedragon" class="view-btn">View</a>
   </div>
-   <div class="catalogue-item">
-    <a href="guppies.html">Chilly mosaic Guppy</a>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Chilli Mosaic Guppy</span>
     <span class="price">₹150 / Pair</span>
+    <a href="guppies.html#chillimosaic" class="view-btn">View</a>
   </div>
-  
-   <div class="catalogue-item">
-    <a href="guppies.html">White tuxido</a>
+
+  <div class="catalogue-item">
+    <span class="fish-name">White Tuxedo</span>
     <span class="price">₹100 / Pair</span>
+    <a href="guppies.html#whitetuxedo" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="guppies.html">Blue Topaz</a>
+    <span class="fish-name">Blue Topaz</span>
     <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#bluetopaz" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="guppies.html">Red Topaz</a>
+    <span class="fish-name">Red Topaz</span>
     <span class="price">₹150 / Pair</span>
-  </div>
-
-  
-  <div class="catalogue-item">
-    <a href="guppies.html">Platinum super red dumbo ear</a>
-    <span class="price">₹200 / Pair</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="guppies.html">HB Red Rose Cauli Dorsal</a>
-    <span class="price">₹200 / Pair</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="guppies.html">Short body blonde koi</a>
-    <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#redtopaz" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="guppies.html">Gold guppy</a>
+    <span class="fish-name">Platinum Super Red Dumbo Ear</span>
     <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#platdumbo" class="view-btn">View</a>
   </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">HB Red Rose Cauli Dorsal</span>
+    <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#hbredrose" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Short Body Blonde Koi</span>
+    <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#shortbodykoi" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Gold Guppy</span>
+    <span class="price">₹200 / Pair</span>
+    <a href="guppies.html#goldguppy" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Albino Topaz White</span>
+    <span class="price">₹180 / Pair</span>
+    <a href="guppies.html#albino" class="view-btn">View</a>
+  </div>
+
   <!-- MOLLIES -->
 
   <h2 class="category-title">Balloon Mollies</h2>
 
   <div class="catalogue-item">
-    <a href="mollies.html">Red Balloon Molly</a>
+    <span class="fish-name">Red Balloon Molly</span>
     <span class="price">₹80 / Pair</span>
+    <a href="mollies.html" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="mollies.html">Moon Tail Platinum White</a>
+    <span class="fish-name">Moon Tail Platinum White</span>
     <span class="price">₹500 onwards</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="guppies.html">Albino topaz white</a>
-    <span class="price">₹180 / Pair</span>
+    <a href="mollies.html" class="view-btn">View</a>
   </div>
 
   <!-- SHRIMPS & SNAILS -->
@@ -195,28 +229,33 @@
   <h2 class="category-title">Shrimps & Snails</h2>
 
   <div class="catalogue-item">
-    <a href="snails.html">Red Cherry Shrimp</a>
+    <span class="fish-name">Red Cherry Shrimp</span>
     <span class="price">₹40 / Piece</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="snails.html">Yellow Cherry Shrimp</a>
-    <span class="price">₹60 / Piece</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="snails.html">BLue dream Shrimp</a>
-    <span class="price">₹60 / Piece</span>
+    <a href="snails.html" class="view-btn">View</a>
   </div>
 
   <div class="catalogue-item">
-    <a href="snails.html">Golden Apple Snail</a>
-    <span class="price">₹30 / Piece</span>
-  </div>
-  
-  <div class="catalogue-item">
-    <a href="snails.html">Assasin Snail</a>
+    <span class="fish-name">Yellow Cherry Shrimp</span>
     <span class="price">₹60 / Piece</span>
+    <a href="snails.html" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Blue Dream Shrimp</span>
+    <span class="price">₹60 / Piece</span>
+    <a href="snails.html" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Golden Apple Snail</span>
+    <span class="price">₹30 / Piece</span>
+    <a href="snails.html" class="view-btn">View</a>
+  </div>
+
+  <div class="catalogue-item">
+    <span class="fish-name">Assassin Snail</span>
+    <span class="price">₹60 / Piece</span>
+    <a href="snails.html" class="view-btn">View</a>
   </div>
 
 </div>

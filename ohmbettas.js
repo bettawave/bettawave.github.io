@@ -1,6 +1,8 @@
 const fishes = [
 
   {
+    id:"ohmbetta",
+
     name:"OHM Betta",
 
     pair:"₹250-500",
@@ -40,7 +42,7 @@ fishes.forEach(fish => {
 
   output += `
 
-    <div class="card">
+    <div class="card" id="${fish.id}">
 
       <div class="image-grid">
 

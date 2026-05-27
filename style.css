@@ -1,23 +1,38 @@
-header{
-  display:flex;
-  align-items:center;
-  gap:25px;
-  padding:25px 30px;
-  background:#162033;
+/* SEARCH BAR */
+
+.search-box{
+  text-align:center;
+  margin:30px 20px;
 }
 
-/* ULTRA BIG LOGO */
-.logo{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
+.search-box input{
+  width:350px;
+  max-width:80%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  font-size:18px;
+  outline:none;
 }
 
-/* ULTRA BIG BRAND TEXT */
-header span{
-  font-size:56px;
-  font-weight:900;
+.search-box button{
+  padding:15px 22px;
+  border:none;
+  border-radius:10px;
+  background:#00d9ff;
   color:white;
-  letter-spacing:2px;
+  font-size:18px;
+  cursor:pointer;
+  margin-left:10px;
+}
+
+.search-box button:hover{
+  background:#00b8d4;
+}
+
+#notFound{
+  text-align:center;
+  color:red;
+  font-size:22px;
+  margin-top:15px;
 }

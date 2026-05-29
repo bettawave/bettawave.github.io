@@ -4,8 +4,8 @@ const fishes = [
   {
     name: "Regular OHM Betta",
 
-    male: "₹250 onwards",
-    female: "₹150 onwards",
+    male: "₹150",
+    female: "₹100 onwards",
 
     images: [
       "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
@@ -16,8 +16,8 @@ const fishes = [
   {
     name: "Candy OHM Betta",
 
-    male: "₹400 onwards",
-    female: "₹250 onwards",
+    male: "₹250 onwards",
+    female: "₹150 onwards",
 
     images: [
       "https://i.ibb.co/F4qCP9Bj/dt1.jpg",

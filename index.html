@@ -2,14 +2,12 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Betta Wave Kolkata</title>
 
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -23,11 +21,8 @@
   <img src="logo.png" class="logo" alt="logo">
 
   <div>
-
     <span>Betta Wave Kolkata</span>
-
     <p class="tagline">We Breed • We Import • We Sell</p>
-
   </div>
 
 </header>
@@ -49,18 +44,16 @@
 </div>
 
 <!-- ========================= -->
-<!-- SEARCH -->
+<!-- SEARCH BAR -->
 <!-- ========================= -->
 
 <div class="search-box">
-
   <input
     id="searchInput"
     type="text"
     placeholder="Search betta, guppy, molly, shrimp, snail..."
     autocomplete="off"
   >
-
 </div>
 
 <div id="searchResults" class="search-results"></div>
@@ -87,7 +80,6 @@
     </div>
   </a>
 
-
   <a class="card-link" href="snails.html">
     <div class="card">
       <img src="https://i.ibb.co/WWYPGBQL/collage1.jpg">
@@ -99,23 +91,21 @@
 </div>
 
 <!-- ========================= -->
-<!-- INFO -->
+<!-- INFO SECTION -->
 <!-- ========================= -->
 
 <div class="info-section">
 
-  <h2>Join WhatsApp</h2>
+  <h2>Join WhatsApp Group</h2>
 
   <div class="whatsapp-box">
 
     <img src="scan.png" class="qr">
 
     <div class="wa-link">
-
       <a href="https://chat.whatsapp.com/FdvZVuLvsdE13DiAqKb2gB" target="_blank">
         Join Group
       </a>
-
     </div>
 
   </div>
@@ -137,7 +127,7 @@
 <div class="chatbot-button" onclick="toggleChat()">🐠</div>
 
 <!-- ========================= -->
-<!-- CHATBOT -->
+<!-- CHATBOT UI -->
 <!-- ========================= -->
 
 <div class="chatbot-container" id="chatbot">
@@ -155,14 +145,14 @@
 
       Choose a fish:<br><br>
 
-      1. Betta<br>
-      2. Guppy<br>
-      3. Molly<br>
-      4. Shrimp<br>
-      5. Snail<br><br>
+      • Betta<br>
+      • Guppy<br>
+      • Molly<br>
+      • Shrimp<br>
+      • Snail<br><br>
 
-      Ask like:<br>
-      "betta care", "guppy food", "shrimp tank"
+      Try:<br>
+      "betta care", "guppy food", "shrimp tank setup"
 
     </div>
 
@@ -191,10 +181,10 @@
 
 const fishMap = [
   { keys:["betta","crowntail","halfmoon","hmpk"], link:"fishes.html" },
-  { keys:["guppy","topaz","dragon guppy","mosaic"], link:"guppies.html" },
-  { keys:["molly","platinum","moon tail"], link:"mollies.html" },
+  { keys:["guppy","dragon","mosaic","topaz"], link:"guppies.html" },
+  { keys:["molly","platinum","balloon"], link:"mollies.html" },
   { keys:["shrimp","cherry","blue dream"], link:"snails.html" },
-  { keys:["snail","nerite"], link:"snails.html" }
+  { keys:["snail","nerite","mystery"], link:"snails.html" }
 ];
 
 const searchInput = document.getElementById("searchInput");
@@ -227,7 +217,7 @@ searchInput.addEventListener("input", () => {
 
 });
 
-/* ENTER = DIRECT OPEN */
+/* ENTER KEY DIRECT OPEN */
 searchInput.addEventListener("keypress", (e) => {
 
   if(e.key === "Enter"){
@@ -248,8 +238,14 @@ searchInput.addEventListener("keypress", (e) => {
 </script>
 
 <!-- ========================= -->
-<!-- AQUATIPSAI -->
+<!-- AQUATIPSAI BRAIN -->
 <!-- ========================= -->
+
+<script src="data/betta.js"></script>
+<script src="data/guppy.js"></script>
+<script src="data/molly.js"></script>
+<script src="data/shrimp.js"></script>
+<script src="data/snail.js"></script>
 
 <script src="aquatips.js"></script>
 

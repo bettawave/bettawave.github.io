@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +17,13 @@
 
   <img src="logo.png" alt="Betta Wave Kolkata Logo" class="logo">
 
-  <span>Betta Wave Kolkata</span>
+  <div>
+    <span>Betta Wave Kolkata</span>
+
+    <p class="tagline">
+      ✨ We Breed • We Import • We Sell ✨
+    </p>
+  </div>
 
 </header>
 
@@ -31,6 +36,15 @@
   <p>
     Top quality fishes, shrimps, snails and aquatic plants.
   </p>
+
+  <!-- GLOWING NOTICE -->
+
+  <div class="glow-box">
+
+    ⚡ Fish prices may vary depending on availability and quality.
+    Before ordering, kindly contact the owner on WhatsApp for confirmation.
+
+  </div>
 
 </div>
 
@@ -86,6 +100,8 @@
 
   <!-- PLANTS -->
   <div class="card">
+
+    <img src="https://i.ibb.co/3mxJCTvV/rhell1.jpg" class="category-image">
 
     <h2>Fresh Water Plants</h2>
 
@@ -178,7 +194,11 @@
     </li>
 
     <li>
-      Prices vary based on quality. We only provide healthy fishes.
+      Prices vary based on quality and availability.
+    </li>
+
+    <li>
+      Before placing an order, kindly contact us on WhatsApp.
     </li>
 
     <li>
@@ -234,16 +254,21 @@ searchInput.addEventListener("keyup", function(){
   );
 
   if(filtered.length === 0){
-    searchResults.innerHTML = `<div class="result-item">❌ Fish not found</div>`;
+
+    searchResults.innerHTML =
+    `<div class="result-item">❌ Fish not found</div>`;
+
     return;
   }
 
   filtered.forEach(fish => {
+
     searchResults.innerHTML += `
       <a href="${fish.link}" class="result-item">
         ${fish.name}
       </a>
     `;
+
   });
 
 });
@@ -253,4 +278,3 @@ searchInput.addEventListener("keyup", function(){
 </body>
 
 </html>
-```

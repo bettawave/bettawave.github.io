@@ -3,13 +3,13 @@ const fishes = [
   {
     name:"Red Splenden",
 
-    pair:"₹1000-1500",
-    male:"₹600-1000",
-    female:"₹450",
+    pair:"₹1100",
+    male:"₹650",
+    female:"₹550",
 
-    pairPrice:1500,
-    malePrice:1000,
-    femalePrice:450,
+    pairPrice:1100,
+    malePrice:650,
+    femalePrice:550,
 
     images:[
       "https://i.ibb.co/JwQ0TdJF/benjo.jpg",
@@ -37,12 +37,12 @@ const fishes = [
   {
     name:"Mahachai",
 
-    pair:"₹1000-2000",
-    male:"₹800-1600",
+    pair:"₹1200",
+    male:"₹1000",
     female:"₹450",
 
-    pairPrice:2000,
-    malePrice:1600,
+    pairPrice:1200,
+    malePrice:1000,
     femalePrice:450,
 
     images:[
@@ -54,12 +54,12 @@ const fishes = [
   {
     name:"Imbellis",
 
-    pair:"₹1000-2000",
-    male:"₹800-1600",
+    pair:"₹1200",
+    male:"₹800",
     female:"₹450",
 
-    pairPrice:2000,
-    malePrice:1600,
+    pairPrice:1200,
+    malePrice:800,
     femalePrice:450,
 
     images:[
@@ -71,12 +71,12 @@ const fishes = [
   {
     name:"Alien",
 
-    pair:"₹1000-1500",
-    male:"₹600-1000",
+    pair:"₹1200",
+    male:"₹700",
     female:"₹450",
 
-    pairPrice:1500,
-    malePrice:1000,
+    pairPrice:1200,
+    malePrice:700,
     femalePrice:450,
 
     images:[
@@ -89,12 +89,12 @@ const fishes = [
   {
     name:"Smaragdina Guitar",
 
-    pair:"₹1500-2000",
-    male:"₹1100-1700",
+    pair:"₹1700",
+    male:"₹1400",
     female:"₹450",
 
-    pairPrice:2000,
-    malePrice:1700,
+    pairPrice:1700,
+    malePrice:1400,
     femalePrice:450,
 
     images:[

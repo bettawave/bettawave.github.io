@@ -1,21 +1,14 @@
 /* =========================
-   AQUATIPSAI MENU FIXED VERSION
+   AQUATIPSAI OFFLINE BRAIN
 ========================= */
 
 /* =========================
-   OPEN CHAT
+   CHAT TOGGLE
 ========================= */
 
 function toggleChat() {
   const chat = document.getElementById("chatbot");
-  if (!chat) return;
-
   chat.style.display = chat.style.display === "flex" ? "none" : "flex";
-
-  // SHOW MENU WHEN OPENED
-  if (chat.style.display === "flex") {
-    showMainMenu();
-  }
 }
 
 /* =========================
@@ -43,7 +36,7 @@ function sendMessage() {
 
   input.value = "";
 
-  let reply = getReply(msg);
+  const reply = getAnswer(msg);
 
   box.innerHTML += `
     <div class="bot-message">${reply}</div>
@@ -53,15 +46,16 @@ function sendMessage() {
 }
 
 /* =========================
-   MAIN MENU (IMPORTANT FIX)
+   CLEAR CHAT
 ========================= */
 
-function showMainMenu() {
+function clearChat() {
   const box = document.getElementById("chatMessages");
 
-  box.innerHTML += `
+  box.innerHTML = `
     <div class="bot-message">
-      👋 <b>Welcome to AquatipsAI</b><br><br>
+
+      👋 Chat cleared!<br><br>
 
       Choose a fish:<br><br>
 
@@ -70,24 +64,23 @@ function showMainMenu() {
       <button onclick="openFish('molly')">🐟 Molly</button>
       <button onclick="openFish('shrimp')">🦐 Shrimp</button>
       <button onclick="openFish('snail')">🐌 Snail</button>
+
     </div>
   `;
-
-  box.scrollTop = box.scrollHeight;
 }
 
 /* =========================
-   OPEN FISH MENU
+   MENU CLICK
 ========================= */
 
 function openFish(type) {
-
-  const data = fishData(type);
-
   const box = document.getElementById("chatMessages");
+
+  const data = fishDB[type];
 
   box.innerHTML += `
     <div class="bot-message">
+
       <b>${data.title}</b><br><br>
 
       🍽 <b>Feeding</b><br>
@@ -98,6 +91,7 @@ function openFish(type) {
 
       🐣 <b>Breeding</b><br>
       ${data.breeding}
+
     </div>
   `;
 
@@ -105,72 +99,68 @@ function openFish(type) {
 }
 
 /* =========================
-   TEXT INPUT RESPONSES
+   MAIN LOGIC
 ========================= */
 
-function getReply(msg) {
+function getAnswer(msg) {
 
-  if (msg.includes("betta")) return fishData("betta").care;
-  if (msg.includes("guppy")) return fishData("guppy").care;
-  if (msg.includes("molly")) return fishData("molly").care;
-  if (msg.includes("shrimp")) return fishData("shrimp").care;
-  if (msg.includes("snail")) return fishData("snail").care;
+  if (msg.includes("betta")) return fishDB.betta.care;
+  if (msg.includes("guppy")) return fishDB.guppy.care;
+  if (msg.includes("molly")) return fishDB.molly.care;
+  if (msg.includes("shrimp")) return fishDB.shrimp.care;
+  if (msg.includes("snail")) return fishDB.snail.care;
 
   return `
-  🤖 Choose a fish from menu or click buttons above.
+    🤖 Please select a fish from menu or type name like:
+    betta care, guppy breeding, shrimp tank
   `;
 }
 
 /* =========================
-   FISH DATABASE (INLINE FIX)
-   (NO EXTERNAL FILES NEEDED)
+   DATABASE
 ========================= */
 
-function fishData(type) {
+const fishDB = {
 
-  const db = {
+  betta: {
+    title: "🐠 Betta Fish Guide",
+    feeding: "1–2 times daily. Best: pellets, bloodworms",
+    care: "26–28°C, clean water, low flow filter",
+    breeding: "Bubble nest, separate pair, remove female after spawning"
+  },
 
-    betta: {
-      title: "🐠 Betta Fish Guide",
-      feeding: "1–2 times daily. Food: pellets, bloodworms",
-      care: "26–28°C, clean water, low flow filter",
-      breeding: "Separate pair, bubble nest, remove female after spawning"
-    },
+  guppy: {
+    title: "🐟 Guppy Guide",
+    feeding: "2 times daily. Flakes, brine shrimp",
+    care: "24–28°C, group fish, clean tank",
+    breeding: "Livebearer, fry every 25–30 days"
+  },
 
-    guppy: {
-      title: "🐟 Guppy Guide",
-      feeding: "2 times daily. Food: flakes, brine shrimp",
-      care: "24–28°C, group fish, clean water",
-      breeding: "Livebearer, fry every 25–30 days"
-    },
+  molly: {
+    title: "🐟 Molly Guide",
+    feeding: "2 times daily. algae wafers, vegetables",
+    care: "24–28°C, slightly hard water",
+    breeding: "Livebearer, fry need plants"
+  },
 
-    molly: {
-      title: "🐟 Molly Guide",
-      feeding: "2 times daily. Food: algae wafers, veggies",
-      care: "24–28°C, slightly hard water",
-      breeding: "Livebearer fish, fry need hiding plants"
-    },
+  shrimp: {
+    title: "🦐 Shrimp Guide",
+    feeding: "Once daily or alternate days",
+    care: "Stable water, no copper, moss tank",
+    breeding: "Egg carrier, planted tank needed"
+  },
 
-    shrimp: {
-      title: "🦐 Shrimp Guide",
-      feeding: "Once daily or alternate days. Shrimp pellets, algae",
-      care: "Stable water, no copper, moss plants",
-      breeding: "Egg carrying female, planted tank needed"
-    },
+  snail: {
+    title: "🐌 Snail Guide",
+    feeding: "Natural algae + calcium food",
+    care: "Stable pH, avoid acidic water",
+    breeding: "Eggs on glass/plants"
+  }
 
-    snail: {
-      title: "🐌 Snail Guide",
-      feeding: "Once daily or algae naturally. Calcium food",
-      care: "Stable pH, avoid acidic water",
-      breeding: "Eggs laid on glass or plants"
-    }
-  };
-
-  return db[type];
-}
+};
 
 /* =========================
-   ESCAPE HTML
+   HTML ESCAPE
 ========================= */
 
 function escapeHtml(str) {

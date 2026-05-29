@@ -2,30 +2,30 @@ const ohmbettas = [
 
   {
     name: "Regular OHM Male",
-    image: "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
+    image: "https://i.ibb.co/bRRvBsrx/ohmmix.jpg",
     price: "₹300 / piece",
     cartPrice: 300
   },
 
   {
     name: "Regular OHM Female",
-    image: "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
+    image: "https://i.ibb.co/s9zfFfKW/femohm.jpg",
     price: "₹150 / piece",
     cartPrice: 150
   },
 
   {
     name: "Candy OHM Male",
-    image: "https://i.ibb.co/LmM78FH/ohm4.jpg",
-    price: "₹500 / piece",
-    cartPrice: 500
+    image: "https://i.ibb.co/mCzsVP9j/candymal.jpg",
+    price: "₹250 / piece",
+    cartPrice: 250
   },
 
   {
     name: "Candy OHM Female",
-    image: "https://i.ibb.co/jZDd8BcT/cohm.jpg",
-    price: "₹250 / piece",
-    cartPrice: 250
+    image: "https://i.ibb.co/q3c75zjn/candyfem.jpg",
+    price: "₹150 / piece",
+    cartPrice: 150
   }
 
 ];

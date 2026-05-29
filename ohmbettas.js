@@ -3,16 +3,14 @@ const fishes = [
   {
     id:"ohmbetta",
 
-    name:"OHM Betta",
+    name:" Regular OHM Betta",
 
-    pair:"₹250-500",
-    male:"₹150-300",
-    female:"₹80-150",
+    male:"₹150",
+    female:"₹100",
 
     // Cart Prices
-    pairPrice:500,
-    malePrice:300,
-    femalePrice:150,
+    malePrice:150,
+    femalePrice:100,
 
     images:[
       "https://i.ibb.co/60Qx8cpb/ohm1.jpg",

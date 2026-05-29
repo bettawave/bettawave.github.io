@@ -1,9 +1,9 @@
 const fishes = [
 
   {
-    id:"ohmbetta",
+    id:"regularohm",
 
-    name:" Regular OHM Betta",
+    name:"Regular OHM Betta",
 
     male:"₹150",
     female:"₹100",
@@ -11,17 +11,27 @@ const fishes = [
     // Cart Prices
     malePrice:150,
     femalePrice:100,
+
+    images:[
+      "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
+      "https://i.ibb.co/fGP7kn9Y/ohm2.jpg"
+    ]
+  },
+
+  {
+    id:"candyohm",
+
     name:"Candy OHM",
+
     male:"₹250",
-    female:"₹150"
-      
+    female:"₹150",
+
     // Cart Prices
     malePrice:250,
     femalePrice:150,
+
     images:[
-      "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
       "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
-      "https://i.ibb.co/LmM78FH/ohm4.jpg",
       "https://i.ibb.co/jZDd8BcT/cohm.jpg"
     ]
   }
@@ -61,12 +71,6 @@ fishes.forEach(fish => {
       <h2>${fish.name}</h2>
 
       <div class="price-box">
-
-        <p><b>Pair:</b> ${fish.pair}</p>
-
-        <button onclick="addToCart('${fish.name} Pair', ${fish.pairPrice})">
-          Add Pair to Cart
-        </button>
 
         <p><b>Male:</b> ${fish.male}</p>
 

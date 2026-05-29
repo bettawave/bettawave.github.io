@@ -1,59 +1,55 @@
-```javascript id="a4n8zv"
-const fishes = [
+```javascript id="7v7xw3"
+const ohmbettas = [
 
   {
-    name: "Regular OHM Betta",
-
-    male: "₹150",
-    female: "₹100 onwards",
-
-    images: [
-      "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
-      "https://i.ibb.co/nqRSLg6V/dt2.jpg"
-    ]
+    name: "Regular OHM Male",
+    image: "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
+    price: "₹300 / piece",
+    cartPrice: 300
   },
 
   {
-    name: "Candy OHM Betta",
+    name: "Regular OHM Female",
+    image: "https://i.ibb.co/nqRSLg6V/dt2.jpg",
+    price: "₹150 / piece",
+    cartPrice: 150
+  },
 
-    male: "₹250 onwards",
-    female: "₹150 onwards",
+  {
+    name: "Candy OHM Male",
+    image: "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
+    price: "₹500 / piece",
+    cartPrice: 500
+  },
 
-    images: [
-      "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
-      "https://i.ibb.co/nqRSLg6V/dt2.jpg"
-    ]
+  {
+    name: "Candy OHM Female",
+    image: "https://i.ibb.co/nqRSLg6V/dt2.jpg",
+    price: "₹250 / piece",
+    cartPrice: 250
   }
 
 ];
 
-const fishContainer = document.getElementById("fishContainer");
+const container = document.getElementById("fishContainer");
 
-fishes.forEach(fish => {
+ohmbettas.forEach(item => {
 
-  let imagesHTML = "";
+  container.innerHTML += `
 
-  fish.images.forEach(img => {
+    <div class="card">
 
-    imagesHTML += `
-      <img src="${img}" class="fish-image">
-    `;
+      <img src="${item.image}" alt="${item.name}">
 
-  });
+      <div class="card-content">
 
-  fishContainer.innerHTML += `
+        <h2>${item.name}</h2>
 
-    <div class="fish-card">
+        <p class="price">${item.price}</p>
 
-      <h2>${fish.name}</h2>
-
-      <p><strong>Male:</strong> ${fish.male}</p>
-
-      <p><strong>Female:</strong> ${fish.female}</p>
-
-      <div class="image-gallery">
-
-        ${imagesHTML}
+        <button onclick="addToCart('${item.name}', ${item.cartPrice})">
+          Add to Cart
+        </button>
 
       </div>
 
@@ -62,4 +58,21 @@ fishes.forEach(fish => {
   `;
 
 });
+
+
+// CART FUNCTION
+
+function addToCart(name, price) {
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    name: name,
+    price: price
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(name + " added to cart!");
+}
 ```

@@ -3,36 +3,47 @@
 ========================= */
 
 const GUPPY_DATA = {
-  title: "🐟 Guppy Guide",
+  title: "🐟 Guppy Fish Guide",
 
   feeding: {
-    times: "Feed 2 times daily (small portions)",
-    food: "Flakes, micro pellets, brine shrimp, daphnia"
+    times: "Feed 2 times daily (small portions only)",
+    food: "Best foods: flakes, micro pellets, brine shrimp, daphnia"
   },
 
   care: `
 • Temperature: 24–28°C  
 • pH: 7.0–7.8  
-• Keep in groups (social fish)  
+• Keep in groups (they are social fish)  
 • Weekly 25% water change  
 • Avoid overcrowding  
-• Good for beginners  
+• Keep clean and stable water  
   `,
 
   breeding: `
-🐣 Guppy Breeding:
+🐣 Guppy Breeding Steps:
 
 • Livebearer fish (no eggs)  
 • Keep ratio 1 male : 2–3 females  
 • Females give birth every 25–30 days  
-• Remove fry for better survival  
-• Provide plants for hiding  
+• Provide plants for fry hiding  
+• Separate fry for better survival  
+  `,
+
+  diseases: `
+⚠️ Common Guppy Problems:
+
+• Fin rot → dirty water  
+• White spot (ich) → temperature stress  
+• Curved spine → poor genetics  
+• Stress → overcrowding or bad water  
+
+✔ Maintain clean water always  
   `,
 
   tips: `
-💡 Tips:
+💡 Extra Tips:
 
-• Bright colored guppies are healthier  
+• Bright guppies = healthy guppies  
 • Do not mix with aggressive fish  
 • Feed variety for better color  
   `

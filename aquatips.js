@@ -1,9 +1,9 @@
 /* =========================
-   AQUATIPSAI OFFLINE BRAIN (CONNECTED)
+   AQUATIPSAI OFFLINE MENU BRAIN
 ========================= */
 
 /* =========================
-   TOGGLE CHAT
+   CHAT TOGGLE
 ========================= */
 
 function toggleChat() {
@@ -47,61 +47,119 @@ function sendMessage() {
 }
 
 /* =========================
-   MAIN BRAIN
+   MAIN ROUTER
 ========================= */
 
 function getAnswer(msg) {
 
-  if (msg.includes("betta")) return buildFish(BETTA_DATA, "betta");
-  if (msg.includes("guppy")) return buildFish(GUPPY_DATA, "guppy");
-  if (msg.includes("molly")) return buildFish(MOLLY_DATA, "molly");
-  if (msg.includes("shrimp")) return buildFish(SHRIMP_DATA, "shrimp");
-  if (msg.includes("snail")) return buildFish(SNAIL_DATA, "snail");
+  if (msg.includes("betta")) return buildMenu("betta", BETTA_DATA);
+  if (msg.includes("guppy")) return buildMenu("guppy", GUPPY_DATA);
+  if (msg.includes("molly")) return buildMenu("molly", MOLLY_DATA);
+  if (msg.includes("shrimp")) return buildMenu("shrimp", SHRIMP_DATA);
+  if (msg.includes("snail")) return buildMenu("snail", SNAIL_DATA);
 
   return `
-🤖 AquatipsAI Offline Mode<br><br>
+🤖 <b>AquatipsAI Menu System</b><br><br>
 
-Ask about:<br>
-• Betta fish<br>
-• Guppy care<br>
-• Molly tank setup<br>
-• Shrimp tank<br>
-• Snail care<br><br>
+Choose a fish:<br>
+• Betta<br>
+• Guppy<br>
+• Molly<br>
+• Shrimp<br>
+• Snail<br><br>
 
-👉 Example: "betta care", "guppy breeding"
+👉 Example: type "betta"
   `;
 }
 
 /* =========================
-   BUILD FISH RESPONSE MENU
+   MENU UI BUILDER
 ========================= */
 
-function buildFish(data, type) {
+function buildMenu(type, data) {
+
   return `
 <b>${data.title}</b><br><br>
 
-<b>🍽 Feeding</b><br>
-${data.feeding.times}<br>
-${data.feeding.food}<br><br>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
 
-<b>🐠 Care</b><br>
-${data.care}<br><br>
+  <button onclick="showSection('${type}','feeding')">🍽 Feeding</button>
+  <button onclick="showSection('${type}','care')">🐠 Care</button>
+  <button onclick="showSection('${type}','breeding')">🐣 Breeding</button>
+  <button onclick="showSection('${type}','diseases')">⚠️ Diseases</button>
+  <button onclick="showSection('${type}','tips')">💡 Tips</button>
 
-<b>🐣 Breeding</b><br>
-${data.breeding}<br><br>
+</div>
 
-<b>⚠️ Diseases</b><br>
-${data.diseases}<br><br>
-
-<b>💡 Tips</b><br>
-${data.tips}<br><br>
-
-👉 Try: "${type} care", "${type} breeding", "${type} diseases"
+👉 Click a button to explore
   `;
 }
 
 /* =========================
-   HTML SAFE
+   SECTION HANDLER
+========================= */
+
+function showSection(type, section) {
+
+  const map = {
+    betta: BETTA_DATA,
+    guppy: GUPPY_DATA,
+    molly: MOLLY_DATA,
+    shrimp: SHRIMP_DATA,
+    snail: SNAIL_DATA
+  };
+
+  const d = map[type];
+
+  let text = "";
+
+  if (section === "feeding") {
+    text = `
+<b>🍽 Feeding</b><br>
+${d.feeding.times}<br>
+${d.feeding.food}
+    `;
+  }
+
+  if (section === "care") {
+    text = `
+<b>🐠 Care</b><br>
+${d.care}
+    `;
+  }
+
+  if (section === "breeding") {
+    text = `
+<b>🐣 Breeding</b><br>
+${d.breeding}
+    `;
+  }
+
+  if (section === "diseases") {
+    text = `
+<b>⚠️ Diseases</b><br>
+${d.diseases}
+    `;
+  }
+
+  if (section === "tips") {
+    text = `
+<b>💡 Tips</b><br>
+${d.tips}
+    `;
+  }
+
+  const box = document.getElementById("chatMessages");
+
+  box.innerHTML += `
+    <div class="bot-message">${text}</div>
+  `;
+
+  box.scrollTop = box.scrollHeight;
+}
+
+/* =========================
+   HTML SAFETY
 ========================= */
 
 function escapeHtml(str) {

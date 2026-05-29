@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +15,17 @@
 
 <body>
 
+<!-- ========================= -->
 <!-- HEADER -->
+<!-- ========================= -->
 
 <header>
 
-  <img src="logo.png" alt="Betta Wave Kolkata Logo" class="logo">
+  <img
+    src="logo.png"
+    alt="Betta Wave Kolkata Logo"
+    class="logo"
+  >
 
   <div>
 
@@ -34,7 +39,9 @@
 
 </header>
 
+<!-- ========================= -->
 <!-- TOP SECTION -->
+<!-- ========================= -->
 
 <div class="top-section">
 
@@ -44,33 +51,41 @@
     Top quality fishes, shrimps, snails and aquatic plants.
   </p>
 
+  <!-- GLOW MESSAGE -->
+
   <div class="glow-box">
 
     ⚡ Fish prices may vary depending on availability and quality.
-    Before placing your order, kindly contact the owner on WhatsApp
+    Before placing your order kindly contact the owner on WhatsApp
     for latest stock updates and confirmation.
 
   </div>
 
 </div>
 
-<!-- SEARCH BAR -->
+<!-- ========================= -->
+<!-- IMPROVED SEARCH -->
+<!-- ========================= -->
 
 <div class="search-box">
 
   <input
     type="text"
     id="searchInput"
-    placeholder="Search fishes like Betta, Guppy, Molly..."
+    placeholder="Search fishes, shrimps, guppies, bettas..."
+    autocomplete="off"
   >
 
 </div>
 
-<!-- SEARCH RESULTS -->
+<div
+  class="search-results"
+  id="searchResults"
+></div>
 
-<div class="search-results" id="searchResults"></div>
-
-<!-- MAIN CONTAINER -->
+<!-- ========================= -->
+<!-- MAIN CARDS -->
+<!-- ========================= -->
 
 <div class="container">
 
@@ -156,7 +171,9 @@
 
 </div>
 
+<!-- ========================= -->
 <!-- INFO SECTION -->
+<!-- ========================= -->
 
 <div class="info-section">
 
@@ -257,23 +274,28 @@
   <ul>
 
     <li>
-      Images are only for reference.
-      Exact fish patterns and colors may vary.
+      The images are only for reference.
+      There is no guarantee that you will get exactly
+      the same looking fish.
     </li>
 
     <li>
-      Prices vary based on quality and availability.
+      Prices vary based on quality.
+      We only provide healthy fishes.
     </li>
 
     <li>
-      Join our WhatsApp group for latest updates and stock.
+      For better communication and updates,
+      join our WhatsApp group above.
     </li>
 
   </ul>
 
 </div>
 
+<!-- ========================= -->
 <!-- FOOTER -->
+<!-- ========================= -->
 
 <footer>
 
@@ -282,28 +304,44 @@
 </footer>
 
 <!-- ========================= -->
-<!-- AQUATIPSAI CHATBOT -->
+<!-- AQUATIPSAI -->
 <!-- ========================= -->
 
-<div class="chatbot-button" onclick="toggleChat()">
+<div
+  class="chatbot-button"
+  onclick="toggleChat()"
+>
 
   🐠
 
 </div>
 
-<div class="chatbot-container" id="chatbot">
+<div
+  class="chatbot-container"
+  id="chatbot"
+>
+
+  <!-- CHAT HEADER -->
 
   <div class="chat-header">
 
     AquatipsAI
 
-    <span onclick="toggleChat()" style="cursor:pointer;">
+    <span
+      onclick="toggleChat()"
+      style="cursor:pointer;"
+    >
       ✖
     </span>
 
   </div>
 
-  <div class="chat-messages" id="chatMessages">
+  <!-- CHAT MESSAGES -->
+
+  <div
+    class="chat-messages"
+    id="chatMessages"
+  >
 
     <div class="bot-message">
 
@@ -314,21 +352,24 @@
       Ask me anything about:
       <br><br>
 
-      • Betta breeding<br>
-      • Guppy care<br>
+      • Betta fish care<br>
+      • Guppy breeding<br>
       • Molly care<br>
       • Shrimp tanks<br>
       • Snail care<br>
       • Fish diseases<br>
+      • PH problems<br>
       • Water changes<br>
-      • Aquarium cycling<br>
       • Fish food<br>
-      • PH & temperature<br>
-      • Tank mates
+      • Aquarium setup<br>
+      • Tank mates<br>
+      • Fish dying problems
 
     </div>
 
   </div>
+
+  <!-- INPUT -->
 
   <div class="chat-input-area">
 
@@ -340,7 +381,9 @@
     >
 
     <button onclick="sendMessage()">
+
       Send
+
     </button>
 
   </div>
@@ -359,16 +402,17 @@ const fishes = [
 
   {
     keywords:[
-      "betta",
       "alien",
       "alien betta",
+      "betta",
       "wild betta",
       "crowntail",
       "halfmoon",
       "hm",
+      "hmpk",
       "plakat"
     ],
-    name:"Betta Fishes",
+    name:"Betta Collection",
     link:"fishes.html"
   },
 
@@ -377,12 +421,13 @@ const fishes = [
   {
     keywords:[
       "guppy",
-      "blue dragon",
-      "topaz",
+      "blue topaz",
+      "red topaz",
       "albino",
-      "mosaic",
+      "albino topaz",
       "gold guppy",
-      "red topaz"
+      "dragon guppy",
+      "chilli mosaic"
     ],
     name:"Guppies",
     link:"guppies.html"
@@ -394,19 +439,21 @@ const fishes = [
     keywords:[
       "molly",
       "mollies",
-      "moon tail",
-      "platinum molly"
+      "platinum molly",
+      "moon tail"
     ],
     name:"Mollies",
     link:"mollies.html"
   },
 
-  /* SHRIMPS */
+  /* SHRIMP */
 
   {
     keywords:[
       "shrimp",
-      "shrimps"
+      "shrimp tank",
+      "cherry shrimp",
+      "blue dream shrimp"
     ],
     name:"Shrimps",
     link:"snails.html"
@@ -417,7 +464,6 @@ const fishes = [
   {
     keywords:[
       "snail",
-      "snails",
       "nerite",
       "mystery snail"
     ],
@@ -433,6 +479,8 @@ document.getElementById("searchInput");
 const searchResults =
 document.getElementById("searchResults");
 
+/* SEARCH FUNCTION */
+
 searchInput.addEventListener("keyup", function(){
 
   let input =
@@ -440,17 +488,36 @@ searchInput.addEventListener("keyup", function(){
 
   searchResults.innerHTML = "";
 
-  if(input.length === 0) return;
+  if(input.length === 0){
 
-  let filtered = fishes.filter(fish =>
+    return;
 
-    fish.keywords.some(keyword =>
-      keyword.includes(input)
-    )
+  }
 
-  );
+  let found = [];
 
-  if(filtered.length === 0){
+  fishes.forEach(item => {
+
+    item.keywords.forEach(keyword => {
+
+      if(keyword.includes(input)){
+
+        found.push(item);
+
+      }
+
+    });
+
+  });
+
+  /* REMOVE DUPLICATES */
+
+  found =
+  [...new Set(found)];
+
+  /* NO RESULT */
+
+  if(found.length === 0){
 
     searchResults.innerHTML = `
 
@@ -466,13 +533,18 @@ searchInput.addEventListener("keyup", function(){
 
   }
 
-  filtered.forEach(fish => {
+  /* SHOW RESULTS */
+
+  found.forEach(item => {
 
     searchResults.innerHTML += `
 
-      <a href="${fish.link}" class="result-item">
+      <a
+        href="${item.link}"
+        class="result-item"
+      >
 
-        🐠 ${fish.name}
+        🔍 ${item.name}
 
       </a>
 
@@ -482,29 +554,29 @@ searchInput.addEventListener("keyup", function(){
 
 });
 
-/* ENTER KEY DIRECT OPEN */
+/* DIRECT OPEN ON ENTER */
 
-searchInput.addEventListener("keypress", function(event){
+searchInput.addEventListener("keypress", function(e){
 
-  if(event.key === "Enter"){
+  if(e.key === "Enter"){
 
     let input =
     searchInput.value.toLowerCase().trim();
 
-    let foundFish = fishes.find(fish =>
+    fishes.forEach(item => {
 
-      fish.keywords.some(keyword =>
-        keyword.includes(input)
-      )
+      item.keywords.forEach(keyword => {
 
-    );
+        if(input.includes(keyword)){
 
-    if(foundFish){
+          window.location.href =
+          item.link;
 
-      window.location.href =
-      foundFish.link;
+        }
 
-    }
+      });
+
+    });
 
   }
 
@@ -512,11 +584,12 @@ searchInput.addEventListener("keypress", function(event){
 
 </script>
 
+<!-- ========================= -->
 <!-- CHATBOT SCRIPT -->
+<!-- ========================= -->
 
 <script src="aquatips.js"></script>
 
 </body>
 
 </html>
-```

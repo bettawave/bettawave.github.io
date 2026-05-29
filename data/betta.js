@@ -15,45 +15,27 @@ const BETTA_DATA = {
 • pH: 6.5–7.5  
 • Keep water clean and stable  
 • Weekly 25% water change  
-• Low flow filter only (bettas hate strong current)  
+• Low flow filter only  
 • Do not keep two male bettas together  
-• Keep in planted or calm tank  
   `,
 
   breeding: `
 🐣 Betta Breeding Steps:
 
-• Keep male and female separate first  
-• Condition both with high protein food for 7–10 days  
-• Use shallow breeding tank (5–6 inch water)  
-• Add floating plants or bubble wrap for nest support  
+• Separate male and female first  
+• Condition with protein food for 7–10 days  
+• Use shallow tank  
 • Male builds bubble nest  
-• Introduce female carefully  
-• After spawning, remove female immediately  
-• Male guards eggs in bubble nest  
-• Remove male once fry become free swimming  
-• Feed fry: infusoria → baby brine shrimp  
+• Remove female after spawning  
+• Male guards eggs  
   `,
 
   diseases: `
-⚠️ Common Betta Problems:
+⚠️ Common Problems:
 
-• Fin rot → dirty water / treat with clean water + salt  
-• Ich (white spots) → raise temperature to 28–30°C + medication  
-• Bloating → overfeeding (fast for 1–2 days)  
-• Stress → poor water quality or small tank  
-
-✔ Always check:
-- Ammonia = 0  
-- Nitrite = 0  
-  `,
-
-  tips: `
-💡 Extra Tips:
-
-• Bettas recognize their owner  
-• They like warm, calm water  
-• Add hiding spots (plants, caves)  
-• Avoid sharp decorations  
+• Fin rot → dirty water  
+• Ich → white spots  
+• Bloating → overfeeding  
+• Stress → poor water quality  
   `
 };

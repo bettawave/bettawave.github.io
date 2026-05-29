@@ -30,7 +30,8 @@ const ohmbettas = [
 
 ];
 
-const container = document.getElementById("fishContainer");
+const container =
+document.getElementById("ohm-container");
 
 let output = "";
 
@@ -50,7 +51,11 @@ ohmbettas.forEach(item => {
 
         <h2>${item.name}</h2>
 
-        <p class="price">${item.price}</p>
+        <p class="price">
+
+          ${item.price}
+
+        </p>
 
         <button onclick="addToCart('${item.name}', ${item.cartPrice})">
 
@@ -69,7 +74,7 @@ ohmbettas.forEach(item => {
 container.innerHTML = output;
 
 
-// ADD TO CART
+// CART FUNCTION
 
 function addToCart(name, price) {
 

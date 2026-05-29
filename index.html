@@ -34,6 +34,7 @@
 <div class="top-section">
 
   <h1>Premium Aquarium Store</h1>
+
   <p>Top quality fishes, shrimps, snails and aquatic plants.</p>
 
   <div class="glow-box">
@@ -47,12 +48,9 @@
 <!-- ========================= -->
 
 <div class="search-box">
-  <input
-    id="searchInput"
-    type="text"
+  <input id="searchInput" type="text"
     placeholder="Search betta, guppy, molly, shrimp, snail..."
-    autocomplete="off"
-  >
+    autocomplete="off">
 </div>
 
 <div id="searchResults" class="search-results"></div>
@@ -90,7 +88,7 @@
 </div>
 
 <!-- ========================= -->
-<!-- INFO SECTION -->
+<!-- SOCIAL LINKS (FIXED) -->
 <!-- ========================= -->
 
 <div class="info-section">
@@ -98,18 +96,26 @@
   <h2>Connect With Us</h2>
 
   <p>
-    📺 YouTube Channel: 
+    ▶️ YouTube Channel:<br>
     <a href="https://www.youtube.com/@BettaWaveKolkata" target="_blank">
-      Betta Wave Kolkata
+      Visit YouTube Channel
     </a>
   </p>
 
   <p>
-    👍 Facebook Profile: 
+    📘 Facebook:<br>
     <a href="https://www.facebook.com/profile.php?id=61580582362168" target="_blank">
-      Click Here
+      Visit Facebook Profile
     </a>
   </p>
+
+</div>
+
+<!-- ========================= -->
+<!-- INFO SECTION -->
+<!-- ========================= -->
+
+<div class="info-section">
 
   <h2>Join WhatsApp Group</h2>
 
@@ -153,17 +159,7 @@
 
     <div style="display:flex; gap:10px; align-items:center;">
 
-      <button onclick="clearChat()" style="
-        background:#0f172a;
-        color:white;
-        border:none;
-        padding:6px 10px;
-        border-radius:8px;
-        cursor:pointer;
-        font-size:12px;
-      ">
-        Clear
-      </button>
+      <button onclick="clearChat()">Clear</button>
 
       <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
 
@@ -175,7 +171,7 @@
 
     <div class="bot-message">
 
-      👋 <b>Welcome to AquatipsAI</b><br><br>
+      👋 Welcome to AquatipsAI<br><br>
 
       Choose a fish:<br><br>
 
@@ -191,12 +187,9 @@
 
   <div class="chat-input-area">
 
-    <input
-      id="userInput"
-      type="text"
+    <input id="userInput" type="text"
       placeholder="Ask AquatipsAI..."
-      onkeypress="handleKey(event)"
-    >
+      onkeypress="handleKey(event)">
 
     <button onclick="sendMessage()">Send</button>
 
@@ -209,19 +202,17 @@
 <!-- ========================= -->
 
 <script>
-
 const fishMap = [
-  { keys:["betta","crowntail","halfmoon","hmpk"], link:"fishes.html" },
-  { keys:["guppy","dragon","mosaic","topaz"], link:"guppies.html" },
-  { keys:["molly","platinum","balloon"], link:"mollies.html" },
-  { keys:["shrimp","cherry","blue dream"], link:"snails.html" },
-  { keys:["snail","nerite","mystery"], link:"snails.html" }
+  { keys:["betta","crowntail","halfmoon"], link:"fishes.html" },
+  { keys:["guppy","dragon","mosaic"], link:"guppies.html" },
+  { keys:["molly","platinum"], link:"mollies.html" },
+  { keys:["shrimp","cherry"], link:"snails.html" },
+  { keys:["snail","nerite"], link:"snails.html" }
 ];
 
 const searchInput = document.getElementById("searchInput");
 const searchResults = document.getElementById("searchResults");
 
-/* LIVE SEARCH */
 searchInput.addEventListener("input", () => {
 
   let value = searchInput.value.toLowerCase().trim();
@@ -248,7 +239,6 @@ searchInput.addEventListener("input", () => {
 
 });
 
-/* ENTER KEY DIRECT OPEN */
 searchInput.addEventListener("keypress", (e) => {
 
   if(e.key === "Enter"){
@@ -265,11 +255,10 @@ searchInput.addEventListener("keypress", (e) => {
   }
 
 });
-
 </script>
 
 <!-- ========================= -->
-<!-- AQUATIPSAI -->
+<!-- AQUATIPSAI FILE -->
 <!-- ========================= -->
 
 <script src="data/betta.js"></script>

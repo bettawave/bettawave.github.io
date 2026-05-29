@@ -127,32 +127,48 @@
 <div class="chatbot-button" onclick="toggleChat()">🐠</div>
 
 <!-- ========================= -->
-<!-- CHATBOT UI -->
+<!-- CHATBOT -->
 <!-- ========================= -->
 
 <div class="chatbot-container" id="chatbot">
 
   <div class="chat-header">
+
     AquatipsAI
-    <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+
+      <button onclick="clearChat()" style="
+        background:#0f172a;
+        color:white;
+        border:none;
+        padding:6px 10px;
+        border-radius:8px;
+        cursor:pointer;
+        font-size:12px;
+      ">
+        Clear
+      </button>
+
+      <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+
+    </div>
+
   </div>
 
   <div class="chat-messages" id="chatMessages">
 
     <div class="bot-message">
 
-      👋 Welcome to AquatipsAI<br><br>
+      👋 <b>Welcome to AquatipsAI</b><br><br>
 
       Choose a fish:<br><br>
 
-      • Betta<br>
-      • Guppy<br>
-      • Molly<br>
-      • Shrimp<br>
-      • Snail<br><br>
-
-      Try:<br>
-      "betta care", "guppy food", "shrimp tank setup"
+      <button onclick="openFish('betta')">🐠 Betta</button>
+      <button onclick="openFish('guppy')">🐟 Guppy</button>
+      <button onclick="openFish('molly')">🐟 Molly</button>
+      <button onclick="openFish('shrimp')">🦐 Shrimp</button>
+      <button onclick="openFish('snail')">🐌 Snail</button>
 
     </div>
 
@@ -172,7 +188,6 @@
   </div>
 
 </div>
-
 <!-- ========================= -->
 <!-- SEARCH SCRIPT -->
 <!-- ========================= -->

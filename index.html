@@ -1,7 +1,12 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Betta Wave Kolkata</title>
 
@@ -18,11 +23,13 @@
   <img src="logo.png" alt="Betta Wave Kolkata Logo" class="logo">
 
   <div>
+
     <span>Betta Wave Kolkata</span>
 
     <p class="tagline">
       We Breed • We Import • We Sell
     </p>
+
   </div>
 
 </header>
@@ -36,8 +43,6 @@
   <p>
     Top quality fishes, shrimps, snails and aquatic plants.
   </p>
-
-  <!-- GLOWING MESSAGE -->
 
   <div class="glow-box">
 
@@ -56,7 +61,7 @@
   <input
     type="text"
     id="searchInput"
-    placeholder="Search fishes..."
+    placeholder="Search fishes like Betta, Guppy, Molly..."
   >
 
 </div>
@@ -65,7 +70,7 @@
 
 <div class="search-results" id="searchResults"></div>
 
-<!-- MAIN CARDS -->
+<!-- MAIN CONTAINER -->
 
 <div class="container">
 
@@ -90,7 +95,7 @@
 
   </a>
 
-  <!-- FRESH WATER FISHES -->
+  <!-- FISHES -->
 
   <a href="fishes.html" class="card-link">
 
@@ -128,7 +133,7 @@
 
   </div>
 
-  <!-- SHRIMPS & SNAILS -->
+  <!-- SHRIMPS -->
 
   <a href="snails.html" class="card-link">
 
@@ -184,7 +189,7 @@
 
   </div>
 
-  <!-- SOCIAL LINKS -->
+  <!-- SOCIAL -->
 
   <h2>Connect With Us</h2>
 
@@ -252,19 +257,16 @@
   <ul>
 
     <li>
-      The images are only for reference.
-      There is no guarantee that you will get exactly
-      the same looking fish.
+      Images are only for reference.
+      Exact fish patterns and colors may vary.
     </li>
 
     <li>
-      Prices vary based on quality.
-      We only provide healthy fishes.
+      Prices vary based on quality and availability.
     </li>
 
     <li>
-      For better communication and updates,
-      join our WhatsApp group above.
+      Join our WhatsApp group for latest updates and stock.
     </li>
 
   </ul>
@@ -291,8 +293,6 @@
 
 <div class="chatbot-container" id="chatbot">
 
-  <!-- CHAT HEADER -->
-
   <div class="chat-header">
 
     AquatipsAI
@@ -303,19 +303,15 @@
 
   </div>
 
-  <!-- CHAT MESSAGES -->
-
   <div class="chat-messages" id="chatMessages">
 
     <div class="bot-message">
 
       Hello 👋<br><br>
 
-      I am <b>AquatipsAI</b>.
+      I am <b>AquatipsAI</b>.<br><br>
 
-      <br><br>
-
-      Ask me about:
+      Ask me anything about:
       <br><br>
 
       • Betta breeding<br>
@@ -328,13 +324,11 @@
       • Aquarium cycling<br>
       • Fish food<br>
       • PH & temperature<br>
-      • Fish pairing
+      • Tank mates
 
     </div>
 
   </div>
-
-  <!-- INPUT -->
 
   <div class="chat-input-area">
 
@@ -353,24 +347,83 @@
 
 </div>
 
+<!-- ========================= -->
 <!-- SEARCH SCRIPT -->
+<!-- ========================= -->
 
 <script>
 
 const fishes = [
 
-  { name:"Alien Betta", link:"fishes.html" },
-  { name:"Albino Topaz White", link:"guppies.html" },
-  { name:"Blue Dragon Guppy", link:"guppies.html" },
-  { name:"Blue Topaz", link:"guppies.html" },
-  { name:"Chilli Mosaic", link:"guppies.html" },
-  { name:"Crowntail Betta", link:"fishes.html" },
-  { name:"Exotic Molly", link:"mollies.html" },
-  { name:"Gold Guppy", link:"guppies.html" },
-  { name:"Halfmoon Betta", link:"fishes.html" },
-  { name:"Moon Tail Platinum White", link:"mollies.html" },
-  { name:"Red Topaz", link:"guppies.html" },
-  { name:"Wild Betta", link:"fishes.html" }
+  /* BETTAS */
+
+  {
+    keywords:[
+      "betta",
+      "alien",
+      "alien betta",
+      "wild betta",
+      "crowntail",
+      "halfmoon",
+      "hm",
+      "plakat"
+    ],
+    name:"Betta Fishes",
+    link:"fishes.html"
+  },
+
+  /* GUPPIES */
+
+  {
+    keywords:[
+      "guppy",
+      "blue dragon",
+      "topaz",
+      "albino",
+      "mosaic",
+      "gold guppy",
+      "red topaz"
+    ],
+    name:"Guppies",
+    link:"guppies.html"
+  },
+
+  /* MOLLIES */
+
+  {
+    keywords:[
+      "molly",
+      "mollies",
+      "moon tail",
+      "platinum molly"
+    ],
+    name:"Mollies",
+    link:"mollies.html"
+  },
+
+  /* SHRIMPS */
+
+  {
+    keywords:[
+      "shrimp",
+      "shrimps"
+    ],
+    name:"Shrimps",
+    link:"snails.html"
+  },
+
+  /* SNAILS */
+
+  {
+    keywords:[
+      "snail",
+      "snails",
+      "nerite",
+      "mystery snail"
+    ],
+    name:"Snails",
+    link:"snails.html"
+  }
 
 ];
 
@@ -383,22 +436,31 @@ document.getElementById("searchResults");
 searchInput.addEventListener("keyup", function(){
 
   let input =
-  searchInput.value.toLowerCase();
+  searchInput.value.toLowerCase().trim();
 
   searchResults.innerHTML = "";
 
   if(input.length === 0) return;
 
   let filtered = fishes.filter(fish =>
-    fish.name.toLowerCase().startsWith(input)
+
+    fish.keywords.some(keyword =>
+      keyword.includes(input)
+    )
+
   );
 
   if(filtered.length === 0){
 
-    searchResults.innerHTML =
-    `<div class="result-item">
-      ❌ Fish not found
-    </div>`;
+    searchResults.innerHTML = `
+
+      <div class="result-item">
+
+        ❌ Fish not found
+
+      </div>
+
+    `;
 
     return;
 
@@ -410,7 +472,7 @@ searchInput.addEventListener("keyup", function(){
 
       <a href="${fish.link}" class="result-item">
 
-        ${fish.name}
+        🐠 ${fish.name}
 
       </a>
 
@@ -420,328 +482,41 @@ searchInput.addEventListener("keyup", function(){
 
 });
 
+/* ENTER KEY DIRECT OPEN */
+
+searchInput.addEventListener("keypress", function(event){
+
+  if(event.key === "Enter"){
+
+    let input =
+    searchInput.value.toLowerCase().trim();
+
+    let foundFish = fishes.find(fish =>
+
+      fish.keywords.some(keyword =>
+        keyword.includes(input)
+      )
+
+    );
+
+    if(foundFish){
+
+      window.location.href =
+      foundFish.link;
+
+    }
+
+  }
+
+});
+
 </script>
 
 <!-- CHATBOT SCRIPT -->
 
-<script>
-
-function toggleChat(){
-
-  const chatbot =
-  document.getElementById("chatbot");
-
-  if(chatbot.style.display === "flex"){
-
-    chatbot.style.display = "none";
-
-  }
-
-  else{
-
-    chatbot.style.display = "flex";
-
-  }
-
-}
-
-function handleKey(event){
-
-  if(event.key === "Enter"){
-
-    sendMessage();
-
-  }
-
-}
-
-function sendMessage(){
-
-  const input =
-  document.getElementById("userInput");
-
-  const messages =
-  document.getElementById("chatMessages");
-
-  let text = input.value.trim();
-
-  if(text === "") return;
-
-  messages.innerHTML += `
-
-    <div class="user-message">
-
-      ${text}
-
-    </div>
-
-  `;
-
-  let reply =
-  getBotReply(text.toLowerCase());
-
-  messages.innerHTML += `
-
-    <div class="bot-message">
-
-      ${reply}
-
-    </div>
-
-  `;
-
-  input.value = "";
-
-  messages.scrollTop =
-  messages.scrollHeight;
-
-}
-
-function getBotReply(msg){
-
-  /* BETTA */
-
-  if(
-    msg.includes("breed betta") ||
-    msg.includes("betta breeding")
-  ){
-
-    return `
-
-    <b>How to Breed Betta Fish 🐠</b><br><br>
-
-    1. Keep male and female separately.<br>
-    2. Feed protein rich food for 1-2 weeks.<br>
-    3. Use shallow breeding tank.<br>
-    4. Water temperature should be 27°C.<br>
-    5. Male will build bubble nest.<br>
-    6. Release female carefully.<br>
-    7. After spawning remove female.<br>
-    8. Male takes care of eggs.<br>
-    9. Remove male after fry swim freely.<br><br>
-
-    For advanced breeding help kindly join our WhatsApp group.
-
-    `;
-
-  }
-
-  /* BETTA CARE */
-
-  else if(
-    msg.includes("betta care") ||
-    msg.includes("betta dying") ||
-    msg.includes("betta sick")
-  ){
-
-    return `
-
-    <b>Betta Care Guide 🐠</b><br><br>
-
-    • Maintain 26-28°C temperature.<br>
-    • Use clean conditioned water.<br>
-    • Weekly 25% water change.<br>
-    • Avoid strong filter flow.<br>
-    • Feed high protein pellets.<br>
-    • Keep ammonia at 0 ppm.<br>
-    • White spots may indicate ich disease.<br><br>
-
-    If condition is serious kindly contact on WhatsApp.
-
-    `;
-
-  }
-
-  /* GUPPY */
-
-  else if(
-    msg.includes("guppy")
-  ){
-
-    return `
-
-    <b>Guppy Care 🐟</b><br><br>
-
-    • Guppies prefer slightly hard water.<br>
-    • Temperature: 24-28°C.<br>
-    • Keep males and females separately if overbreeding happens.<br>
-    • Feed flakes + live food.<br>
-    • Regular water changes are important.<br>
-    • Pregnant females need hiding plants.<br>
-
-    `;
-
-  }
-
-  /* MOLLY */
-
-  else if(
-    msg.includes("molly")
-  ){
-
-    return `
-
-    <b>Molly Fish Care 🐟</b><br><br>
-
-    • Mollies like hard alkaline water.<br>
-    • Add aquarium salt carefully if needed.<br>
-    • Temperature: 25-28°C.<br>
-    • Feed algae and vegetable based foods.<br>
-    • Avoid dirty water conditions.<br>
-
-    `;
-
-  }
-
-  /* SHRIMP */
-
-  else if(
-    msg.includes("shrimp")
-  ){
-
-    return `
-
-    <b>Shrimp Care 🦐</b><br><br>
-
-    • Stable water is very important.<br>
-    • Avoid copper medicines.<br>
-    • Use sponge filter.<br>
-    • Keep ammonia and nitrite at 0.<br>
-    • Feed shrimp pellets and algae food.<br>
-    • Moss plants help shrimp feel safe.<br>
-
-    `;
-
-  }
-
-  /* SNAILS */
-
-  else if(
-    msg.includes("snail")
-  ){
-
-    return `
-
-    <b>Snail Care 🐌</b><br><br>
-
-    • Snails help clean algae.<br>
-    • Feed calcium rich food.<br>
-    • Nerite snails are beginner friendly.<br>
-    • Avoid acidic water.<br>
-    • Do not overfeed the tank.<br>
-
-    `;
-
-  }
-
-  /* PH */
-
-  else if(
-    msg.includes("ph") ||
-    msg.includes("water parameter")
-  ){
-
-    return `
-
-    <b>PH & Water Parameters 💧</b><br><br>
-
-    • Bettas: PH 6.5 - 7.5<br>
-    • Guppies: PH 7 - 8<br>
-    • Shrimp: Stable PH important<br>
-    • Use testing kit regularly.<br>
-    • Sudden PH change can stress fish.<br>
-
-    `;
-
-  }
-
-  /* WATER CHANGE */
-
-  else if(
-    msg.includes("water change")
-  ){
-
-    return `
-
-    <b>Water Change Guide 💦</b><br><br>
-
-    • Change 25-30% water weekly.<br>
-    • Use anti chlorine solution.<br>
-    • Match temperature before adding water.<br>
-    • Clean substrate carefully.<br>
-
-    `;
-
-  }
-
-  /* FISH FOOD */
-
-  else if(
-    msg.includes("food") ||
-    msg.includes("feed")
-  ){
-
-    return `
-
-    <b>Fish Feeding Tips 🍤</b><br><br>
-
-    • Feed 1-2 times daily.<br>
-    • Avoid overfeeding.<br>
-    • Remove uneaten food.<br>
-    • Use protein rich food for bettas.<br>
-    • Variety improves fish color.<br>
-
-    `;
-
-  }
-
-  /* PAIRING */
-
-  else if(
-    msg.includes("pair") ||
-    msg.includes("tank mate")
-  ){
-
-    return `
-
-    <b>Fish Pairing & Tank Mates 🐠</b><br><br>
-
-    • Male bettas should not stay together.<br>
-    • Guppies and mollies can stay together.<br>
-    • Shrimp may get eaten by aggressive fish.<br>
-    • Avoid fin nippers with bettas.<br>
-
-    `;
-
-  }
-
-  /* DEFAULT */
-
-  else{
-
-    return `
-
-    Sorry 😅<br><br>
-
-    I mainly answer aquarium related questions:
-    <br><br>
-
-    • Fish care<br>
-    • Betta breeding<br>
-    • Water parameters<br>
-    • Shrimp & snail care<br>
-    • Aquarium setup<br><br>
-
-    Kindly join our WhatsApp group for advanced support.
-
-    `;
-
-  }
-
-}
-
-</script>
+<script src="aquatips.js"></script>
 
 </body>
 
 </html>
+```

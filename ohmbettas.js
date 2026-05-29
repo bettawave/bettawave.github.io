@@ -30,20 +30,16 @@ const ohmbettas = [
 
 ];
 
-const container =
-document.getElementById("ohm-container");
-
-let output = "";
+const container = document.getElementById("ohm-container");
 
 ohmbettas.forEach(item => {
 
-  output += `
+  container.innerHTML += `
 
     <div class="card">
 
       <img
         src="${item.image}"
-        alt="${item.name}"
         class="fish-image"
       >
 
@@ -52,15 +48,11 @@ ohmbettas.forEach(item => {
         <h2>${item.name}</h2>
 
         <p class="price">
-
           ${item.price}
-
         </p>
 
         <button onclick="addToCart('${item.name}', ${item.cartPrice})">
-
           Add to Cart
-
         </button>
 
       </div>
@@ -71,19 +63,14 @@ ohmbettas.forEach(item => {
 
 });
 
-container.innerHTML = output;
-
-
-// CART FUNCTION
-
-function addToCart(name, price) {
+function addToCart(name, price){
 
   let cart =
   JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
-    name: name,
-    price: price
+    name:name,
+    price:price
   });
 
   localStorage.setItem(
@@ -91,6 +78,5 @@ function addToCart(name, price) {
     JSON.stringify(cart)
   );
 
-  alert(name + " added to cart!");
-
+  alert(name + " added to cart");
 }

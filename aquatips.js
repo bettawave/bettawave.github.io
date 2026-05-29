@@ -1,248 +1,221 @@
-const API_KEY = "AQ.Ab8RN6KY_-x2Zu8MhkfSyexn5kPu_-pheFNXUqaABIb2tVhn3w";
-
 /* =========================
-   FISH KNOWLEDGE BASE (MENU MODE)
+   AQUATIPSAI OFFLINE BRAIN
 ========================= */
 
-const fishGuide = {
+const fishDB = {
   betta: {
     title: "🐠 Betta Fish Guide",
-    feeding: "Feed 1–2 times a day (small portions only). Best food: Betta pellets, bloodworms, daphnia.",
-    questions: {
-      care: "Betta Care",
-      sick: "Sick Betta Treatment",
-      breeding: "Betta Breeding Guide",
-      tank: "Tank Setup"
-    }
+
+    feeding: {
+      times: "Feed 1–2 times daily (small portions only)",
+      food: "Best food: Betta pellets, bloodworms, daphnia, mosquito larvae"
+    },
+
+    care: `
+• Temperature: 26–28°C  
+• pH: 6.5–7.5  
+• Low flow filter required  
+• Weekly 25% water change  
+• Avoid overcrowding  
+• Keep alone or with peaceful fish
+    `,
+
+    sick: `
+⚠️ Sick Betta Treatment:
+• Check ammonia (must be 0)
+• Do 40% water change
+• Add aquarium salt (small dose)
+• Increase temperature slightly (28°C)
+• Use anti-fungal if white patches appear
+    `,
+
+    breeding: `
+🐣 Betta Breeding:
+• Separate male & female first
+• Condition with protein food 7 days
+• Use shallow tank (5–6 inch water)
+• Male builds bubble nest
+• Remove female after spawning
+• Male guards eggs
+    `
   },
 
   guppy: {
     title: "🐟 Guppy Guide",
-    feeding: "Feed 2 times a day. Best food: flakes, micro pellets, brine shrimp.",
-    questions: {
-      care: "Guppy Care",
-      breeding: "Guppy Breeding",
-      fry: "Guppy Fry Care",
-      tank: "Tank Setup"
-    }
+
+    feeding: {
+      times: "Feed 2 times daily",
+      food: "Flakes, micro pellets, brine shrimp, daphnia"
+    },
+
+    care: `
+• Temp: 24–28°C  
+• pH: 7–7.8  
+• Keep in groups  
+• Clean water weekly  
+• Avoid overcrowding  
+    `,
+
+    breeding: `
+🐣 Guppy Breeding:
+• Livebearer fish
+• 1 male : 2 females
+• Fry born every 25–30 days
+• Separate fry for survival
+    `
   },
 
   molly: {
     title: "🐟 Molly Guide",
-    feeding: "Feed 2 times a day. Best food: algae wafers, flakes, veggies.",
-    questions: {
-      care: "Molly Care",
-      breeding: "Molly Breeding",
-      disease: "Common Diseases",
-      tank: "Tank Setup"
-    }
+
+    feeding: {
+      times: "Feed 2 times daily",
+      food: "Algae wafers, flakes, boiled spinach, vegetables"
+    },
+
+    care: `
+• Temp: 24–28°C  
+• pH: 7–8  
+• Needs hard water  
+• Add salt in small quantity  
+    `,
+
+    breeding: `
+🐣 Molly Breeding:
+• Livebearer
+• Warm clean water
+• Plants for fry hiding
+• Separate fry if needed
+    `
   },
 
   shrimp: {
     title: "🦐 Shrimp Guide",
-    feeding: "Feed once a day or alternate days. Best food: shrimp pellets, algae, blanched veggies.",
-    questions: {
-      care: "Shrimp Care",
-      breeding: "Shrimp Breeding",
-      tank: "Tank Setup",
-      water: "Water Parameters"
-    }
+
+    feeding: {
+      times: "Feed once daily or alternate days",
+      food: "Shrimp pellets, algae, blanched zucchini, spinach"
+    },
+
+    care: `
+• Very stable water required  
+• No copper medicines  
+• Sponge filter only  
+• Moss plants recommended  
+    `,
+
+    breeding: `
+🐣 Shrimp Breeding:
+• Stable tank needed
+• Females carry eggs under tail
+• Baby shrimps survive in planted tanks
+    `
   },
 
   snail: {
     title: "🐌 Snail Guide",
-    feeding: "Feed once daily or natural algae. Best food: algae wafers, calcium foods.",
-    questions: {
-      care: "Snail Care",
-      shell: "Shell Health",
-      tank: "Tank Setup"
-    }
+
+    feeding: {
+      times: "Feed once daily or natural algae",
+      food: "Algae wafers, calcium-rich food, vegetables"
+    },
+
+    care: `
+• Avoid acidic water  
+• Need calcium for shell  
+• Do not overfeed tank  
+• Nerite snails best for beginners  
+    `
   }
 };
 
 /* =========================
-   TOGGLE CHAT
+   CHAT TOGGLE
 ========================= */
 
 function toggleChat() {
-  const chatbot = document.getElementById("chatbot");
-  if (!chatbot) return;
-
-  chatbot.style.display =
-    chatbot.style.display === "flex" ? "none" : "flex";
+  const chat = document.getElementById("chatbot");
+  chat.style.display = chat.style.display === "flex" ? "none" : "flex";
 }
 
 /* =========================
    ENTER KEY
 ========================= */
 
-function handleKey(event) {
-  if (event.key === "Enter") sendMessage();
+function handleKey(e) {
+  if (e.key === "Enter") sendMessage();
 }
 
 /* =========================
    SEND MESSAGE
 ========================= */
 
-async function sendMessage(customText = null) {
+function sendMessage() {
   const input = document.getElementById("userInput");
-  const messages = document.getElementById("chatMessages");
+  const box = document.getElementById("chatMessages");
 
-  const text = (customText || input.value).trim();
-  if (!text) return;
+  const msg = input.value.trim().toLowerCase();
+  if (!msg) return;
 
-  messages.innerHTML += `
-    <div class="user-message">${escapeHtml(text)}</div>
-  `;
+  box.innerHTML += `<div class="user-message">${escapeHtml(msg)}</div>`;
+  input.value = "";
 
-  if (input) input.value = "";
+  const reply = getAnswer(msg);
 
-  const loadingId = "loading";
-  messages.innerHTML += `
-    <div class="bot-message" id="${loadingId}">
-      AquatipsAI is thinking...
-    </div>
-  `;
-
-  messages.scrollTop = messages.scrollHeight;
-
-  /* =========================
-     LOCAL MENU FIRST (FAST ANSWERS)
-  ========================= */
-
-  const localReply = getLocalFishReply(text.toLowerCase());
-
-  if (localReply) {
-    document.getElementById("loading")?.remove();
-
-    messages.innerHTML += `
-      <div class="bot-message">${localReply}</div>
-    `;
-
-    return;
-  }
-
-  /* =========================
-     FALLBACK TO GEMINI AI
-  ========================= */
-
-  try {
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [
-            {
-              parts: [
-                {
-                  text: systemPrompt(text)
-                }
-              ]
-            }
-          ]
-        })
-      }
-    );
-
-    const data = await response.json();
-
-    document.getElementById("loading")?.remove();
-
-    const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Sorry, I couldn't generate a response.";
-
-    messages.innerHTML += `
-      <div class="bot-message">${format(reply)}</div>
-    `;
-  } catch (e) {
-    document.getElementById("loading")?.remove();
-
-    messages.innerHTML += `
-      <div class="bot-message">
-        ⚠ Unable to connect to AquatipsAI.
-      </div>
-    `;
-  }
-
-  messages.scrollTop = messages.scrollHeight;
+  box.innerHTML += `<div class="bot-message">${reply}</div>`;
+  box.scrollTop = box.scrollHeight;
 }
 
 /* =========================
-   LOCAL FISH RESPONSES
+   MAIN LOGIC (BRAIN)
 ========================= */
 
-function getLocalFishReply(msg) {
-  if (msg.includes("betta")) return fishMenu("betta");
-  if (msg.includes("guppy")) return fishMenu("guppy");
-  if (msg.includes("molly")) return fishMenu("molly");
-  if (msg.includes("shrimp")) return fishMenu("shrimp");
-  if (msg.includes("snail")) return fishMenu("snail");
+function getAnswer(msg) {
 
-  return null;
-}
+  if (msg.includes("betta")) return buildFish("betta");
+  if (msg.includes("guppy")) return buildFish("guppy");
+  if (msg.includes("molly")) return buildFish("molly");
+  if (msg.includes("shrimp")) return buildFish("shrimp");
+  if (msg.includes("snail")) return buildFish("snail");
 
-/* =========================
-   FISH MENU BUILDER
-========================= */
-
-function fishMenu(type) {
-  const fish = fishGuide[type];
-
-  let html = `<b>${fish.title}</b><br><br>`;
-  html += `<b>Feeding:</b> ${fish.feeding}<br><br>`;
-  html += `<b>Questions:</b><br><br>`;
-
-  for (let key in fish.questions) {
-    html += `• ${fish.questions[key]}<br>`;
-  }
-
-  html += `<br>👉 Ask any question like:
-  "betta care", "guppy breeding", "shrimp tank setup"`;
-
-  return html;
-}
-
-/* =========================
-   SYSTEM PROMPT (AI CONTROL)
-========================= */
-
-function systemPrompt(userText) {
   return `
-You are AquatipsAI, an expert aquarium assistant.
+  🤖 AquatipsAI Offline Mode<br><br>
 
-Focus only on:
-- Betta, Guppy, Molly, Shrimp, Snail care
-- Breeding guides
-- Disease treatment
-- Water parameters
-- Tank setup
-
-Always:
-- Give step-by-step answers
-- Keep beginner friendly
-- Be practical for Indian aquarium conditions
-
-If unrelated topic:
-Say: "Please ask only aquarium related questions or join WhatsApp group."
-
-User question:
-${userText}
-`;
+  Ask about:<br>
+  • Betta care<br>
+  • Guppy breeding<br>
+  • Molly tank setup<br>
+  • Shrimp care<br>
+  • Snail care
+  `;
 }
 
 /* =========================
-   FORMAT
+   BUILD FISH RESPONSE
 ========================= */
 
-function format(text) {
-  return escapeHtml(text).replace(/\n/g, "<br>");
+function buildFish(type) {
+  const f = fishDB[type];
+
+  return `
+<b>${f.title}</b><br><br>
+
+<b>🍽 Feeding</b><br>
+${f.feeding.times}<br>
+${f.feeding.food}<br><br>
+
+<b>🐠 Care</b><br>
+${f.care}<br><br>
+
+<b>🐣 Breeding</b><br>
+${f.breeding}<br><br>
+
+👉 Ask: "${type} care", "${type} breeding"
+  `;
 }
 
 /* =========================
-   ESCAPE HTML
+   HTML SAFE
 ========================= */
 
 function escapeHtml(str) {

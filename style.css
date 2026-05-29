@@ -7,6 +7,21 @@ body{
   overflow-x:hidden;
 }
 
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#00d9ff;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#0f172a;
+}
+
 /* HEADER */
 
 header{
@@ -21,6 +36,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 /* HEADER LEFT */
@@ -84,27 +100,6 @@ header span{
 
 }
 
-/* CART BUTTON */
-
-.cart-link{
-  background:linear-gradient(135deg,#00d9ff,#00ffcc);
-  color:#04131f;
-  padding:12px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:15px;
-  transition:0.3s;
-  box-shadow:0 0 12px rgba(0,217,255,0.4);
-}
-
-.cart-link:hover{
-  transform:translateY(-2px) scale(1.05);
-  box-shadow:
-    0 0 15px rgba(0,217,255,0.7),
-    0 0 30px rgba(0,217,255,0.4);
-}
-
 /* TOP SECTION */
 
 .top-section{
@@ -128,7 +123,7 @@ header span{
   margin:auto;
 }
 
-/* GLOW NOTICE */
+/* GLOW BOX */
 
 .glow-box{
   width:85%;
@@ -146,7 +141,7 @@ header span{
   animation:noticeGlow 1.8s infinite alternate;
 }
 
-/* NOTICE GLOW */
+/* GLOW ANIMATION */
 
 @keyframes noticeGlow{
 
@@ -222,7 +217,7 @@ header span{
   color:black;
 }
 
-/* CONTAINER */
+/* MAIN CONTAINER */
 
 .container{
   display:grid;
@@ -254,6 +249,7 @@ header span{
   transition:0.35s;
   box-shadow:0 5px 14px rgba(0,0,0,0.5);
   border:1px solid rgba(255,255,255,0.05);
+  position:relative;
 }
 
 /* CARD HOVER */
@@ -265,7 +261,7 @@ header span{
     0 0 40px rgba(0,217,255,0.2);
 }
 
-/* IMAGES */
+/* CARD IMAGES */
 
 .category-image,
 .fish-image,
@@ -387,7 +383,7 @@ button:hover{
     0 0 12px rgba(0,217,255,0.4);
 }
 
-/* WA BUTTON */
+/* WHATSAPP BUTTON */
 
 .wa-link a{
   display:inline-block;
@@ -427,12 +423,12 @@ footer{
   position:fixed;
   bottom:25px;
   right:25px;
-  width:68px;
-  height:68px;
+  width:70px;
+  height:70px;
   border-radius:50%;
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
   color:#04131f;
-  font-size:32px;
+  font-size:34px;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -462,13 +458,15 @@ footer{
 
 }
 
+/* CHAT CONTAINER */
+
 .chatbot-container{
 
   position:fixed;
   bottom:105px;
   right:25px;
-  width:360px;
-  height:520px;
+  width:380px;
+  height:560px;
   background:#162033;
   border-radius:22px;
   overflow:hidden;
@@ -482,18 +480,22 @@ footer{
 
 }
 
+/* CHAT HEADER */
+
 .chat-header{
 
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
   color:#04131f;
   padding:18px;
-  font-size:21px;
+  font-size:22px;
   font-weight:bold;
   display:flex;
   justify-content:space-between;
   align-items:center;
 
 }
+
+/* CHAT MESSAGES */
 
 .chat-messages{
 
@@ -507,6 +509,8 @@ footer{
 
 }
 
+/* BOT MESSAGE */
+
 .bot-message{
 
   background:#1e293b;
@@ -516,8 +520,11 @@ footer{
   max-width:85%;
   line-height:1.7;
   font-size:15px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
 
 }
+
+/* USER MESSAGE */
 
 .user-message{
 
@@ -532,14 +539,19 @@ footer{
 
 }
 
+/* INPUT AREA */
+
 .chat-input-area{
 
   display:flex;
   gap:10px;
   padding:14px;
   background:#162033;
+  border-top:1px solid rgba(255,255,255,0.05);
 
 }
+
+/* INPUT */
 
 .chat-input-area input{
 
@@ -558,6 +570,8 @@ footer{
   color:#bdbdbd;
 }
 
+/* SEND BUTTON */
+
 .chat-input-area button{
 
   margin:0;
@@ -568,6 +582,12 @@ footer{
   color:#04131f;
   font-weight:bold;
   cursor:pointer;
+
+}
+
+.chat-input-area button:hover{
+
+  transform:scale(1.05);
 
 }
 
@@ -644,6 +664,12 @@ footer{
     right:4%;
     height:75vh;
     bottom:90px;
+  }
+
+  .chatbot-button{
+    width:62px;
+    height:62px;
+    font-size:28px;
   }
 
 }

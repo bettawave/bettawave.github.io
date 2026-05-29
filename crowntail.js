@@ -13,8 +13,7 @@ const fishes = [
     femalePrice: 250,
 
     images: [
-      "https://i.ibb.co/ycpRX2Zd/ct1.jpg",
-      "https://i.ibb.co/fYnFr3r2/ct2.jpg",
+      "https://i.ibb.co/84MMpvgd/ct2.jpg",
       "https://i.ibb.co/93TPkZVp/ct3.jpg",
       "https://i.ibb.co/39m6yp0q/ct5.jpg",
     ]

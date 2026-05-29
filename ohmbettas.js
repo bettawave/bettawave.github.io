@@ -3,15 +3,15 @@ const ohmbettas = [
   {
     name: "Regular OHM Male",
     image: "https://i.ibb.co/bRRvBsrx/ohmmix.jpg",
-    price: "₹300 / piece",
-    cartPrice: 300
+    price: "₹150 / piece",
+    cartPrice: 150
   },
 
   {
     name: "Regular OHM Female",
     image: "https://i.ibb.co/s9zfFfKW/femohm.jpg",
-    price: "₹150 / piece",
-    cartPrice: 150
+    price: "₹100 / piece",
+    cartPrice: 100
   },
 
   {

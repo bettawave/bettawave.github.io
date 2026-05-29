@@ -32,27 +32,21 @@ const ohmbettas = [
 
 const container = document.getElementById("ohm-container");
 
-let output = "";
+ohmbettas.forEach(ohm => {
 
-ohmbettas.forEach(item => {
-
-  output += `
+  container.innerHTML += `
 
     <div class="card">
 
-      <img
-        src="${item.image}"
-        alt="${item.name}"
-        class="fish-image"
-      >
+      <img src="${ohm.image}" alt="${ohm.name}">
 
       <div class="card-content">
 
-        <h2>${item.name}</h2>
+        <h2>${ohm.name}</h2>
 
-        <p class="price">${item.price}</p>
+        <p class="price">${ohm.price}</p>
 
-        <button onclick="addToCart('${item.name}', ${item.cartPrice})">
+        <button onclick="addToCart('${ohm.name}', ${ohm.cartPrice})">
           Add to Cart
         </button>
 
@@ -64,25 +58,19 @@ ohmbettas.forEach(item => {
 
 });
 
-container.innerHTML = output;
-
 
 // CART FUNCTION
 
-function addToCart(name, price){
+function addToCart(name, price) {
 
-  let cart =
-  JSON.parse(localStorage.getItem("cart")) || [];
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
-    name:name,
-    price:price
+    name: name,
+    price: price
   });
 
-  localStorage.setItem(
-    "cart",
-    JSON.stringify(cart)
-  );
+  localStorage.setItem("cart", JSON.stringify(cart));
 
   alert(name + " added to cart!");
 }

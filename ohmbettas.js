@@ -11,9 +11,14 @@ const fishes = [
     // Cart Prices
     malePrice:150,
     femalePrice:100,
-
+    name:"Candy OHM",
+    male:"₹250",
+    female:"₹150"
+      
+    // Cart Prices
+    malePrice:250,
+    femalePrice:150,
     images:[
-      "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
       "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
       "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
       "https://i.ibb.co/LmM78FH/ohm4.jpg",

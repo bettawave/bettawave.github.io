@@ -1,88 +1,43 @@
+```javascript id="t6ks1s"
 const fishes = [
 
   {
-    id:"regularohm",
+    name: "OHM Betta",
+    price: "₹300 onwards",
 
-    name:"Regular OHM Betta",
-
-    male:"₹150",
-    female:"₹100",
-
-    // Cart Prices
-    malePrice:150,
-    femalePrice:100,
-
-    images:[
-      "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
-      "https://i.ibb.co/fGP7kn9Y/ohm2.jpg"
-    ]
-  },
-
-  {
-    id:"candyohm",
-
-    name:"Candy OHM",
-
-    male:"₹250",
-    female:"₹150",
-
-    // Cart Prices
-    malePrice:250,
-    femalePrice:150,
-
-    images:[
-      "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
-      "https://i.ibb.co/jZDd8BcT/cohm.jpg"
+    images: [
+      "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
+      "https://i.ibb.co/nqRSLg6V/dt2.jpg"
     ]
   }
 
 ];
 
-let output = "";
+const fishContainer = document.getElementById("fishContainer");
 
 fishes.forEach(fish => {
 
-  let imageHTML = "";
+  let imagesHTML = "";
 
   fish.images.forEach(img => {
 
-    imageHTML += `
-
-      <img
-        src="${img}"
-        class="fish-image"
-        onerror="this.style.display='none'"
-      >
-
+    imagesHTML += `
+      <img src="${img}" class="fish-image">
     `;
 
   });
 
-  output += `
+  fishContainer.innerHTML += `
 
-    <div class="card" id="${fish.id}">
-
-      <div class="image-grid">
-
-        ${imageHTML}
-
-      </div>
+    <div class="fish-card">
 
       <h2>${fish.name}</h2>
 
-      <div class="price-box">
+      <p>${fish.price}</p>
 
-        <p><b>Male:</b> ${fish.male}</p>
+      <div class="image-gallery">
 
-        <button onclick="addToCart('${fish.name} Male', ${fish.malePrice})">
-          Add Male to Cart
-        </button>
-
-        <p><b>Female:</b> ${fish.female}</p>
-
-        <button onclick="addToCart('${fish.name} Female', ${fish.femalePrice})">
-          Add Female to Cart
-        </button>
+        ${imagesHTML}
 
       </div>
 
@@ -91,22 +46,4 @@ fishes.forEach(fish => {
   `;
 
 });
-
-document.getElementById("ohm-container").innerHTML = output;
-
-
-// CART FUNCTION
-
-function addToCart(name, price) {
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart.push({
-    name: name,
-    price: price
-  });
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert(name + " added to cart!");
-}
+```

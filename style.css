@@ -7,7 +7,9 @@ body{
   overflow-x:hidden;
 }
 
-/* SCROLLBAR */
+/* =========================
+   SCROLLBAR
+========================= */
 
 ::-webkit-scrollbar{
   width:8px;
@@ -22,7 +24,9 @@ body{
   background:#0f172a;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
   display:flex;
@@ -39,14 +43,10 @@ header{
   border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
-/* HEADER LEFT */
-
 header div{
   display:flex;
   flex-direction:column;
 }
-
-/* LOGO */
 
 .logo{
   width:95px;
@@ -54,53 +54,33 @@ header div{
   border-radius:50%;
   object-fit:cover;
   border:3px solid #00d9ff;
-  box-shadow:
-    0 0 12px rgba(0,217,255,0.7),
-    0 0 25px rgba(0,217,255,0.3);
+  box-shadow:0 0 12px rgba(0,217,255,0.7), 0 0 25px rgba(0,217,255,0.3);
 }
-
-/* BRAND */
 
 header span{
   font-size:40px;
   font-weight:900;
   color:white;
   letter-spacing:1px;
-  text-shadow:
-    0 0 8px rgba(0,217,255,0.5);
+  text-shadow:0 0 8px rgba(0,217,255,0.5);
 }
-
-/* TAGLINE */
 
 .tagline{
   margin-top:8px;
   font-size:16px;
   font-weight:bold;
   color:#00ffcc;
-  letter-spacing:1px;
   animation:tagGlow 2s infinite alternate;
 }
 
-/* TAGLINE GLOW */
-
 @keyframes tagGlow{
-
-  from{
-    text-shadow:
-      0 0 6px #00d9ff,
-      0 0 12px #00d9ff;
-  }
-
-  to{
-    text-shadow:
-      0 0 10px #00ffcc,
-      0 0 25px #00ffcc,
-      0 0 35px #00d9ff;
-  }
-
+  from{ text-shadow:0 0 6px #00d9ff; }
+  to{ text-shadow:0 0 25px #00ffcc, 0 0 35px #00d9ff; }
 }
 
-/* TOP SECTION */
+/* =========================
+   TOP SECTION
+========================= */
 
 .top-section{
   text-align:center;
@@ -111,56 +91,42 @@ header span{
   font-size:52px;
   color:#00d9ff;
   margin-bottom:12px;
-  text-shadow:
-    0 0 12px rgba(0,217,255,0.5);
 }
 
 .top-section p{
   font-size:20px;
   color:#d6d6d6;
-  line-height:1.7;
   max-width:850px;
   margin:auto;
+  line-height:1.7;
 }
 
-/* GLOW BOX */
+/* =========================
+   GLOW BOX
+========================= */
 
 .glow-box{
   width:85%;
   max-width:850px;
   margin:30px auto;
-  padding:20px 25px;
+  padding:20px;
   border-radius:18px;
   background:#162033;
   color:#00ffcc;
   text-align:center;
-  font-size:18px;
   font-weight:bold;
-  line-height:1.8;
   border:1px solid rgba(0,217,255,0.4);
   animation:noticeGlow 1.8s infinite alternate;
 }
 
-/* GLOW ANIMATION */
-
 @keyframes noticeGlow{
-
-  from{
-    box-shadow:
-      0 0 10px rgba(0,217,255,0.4),
-      0 0 20px rgba(0,217,255,0.2);
-  }
-
-  to{
-    box-shadow:
-      0 0 18px rgba(0,255,204,0.9),
-      0 0 35px rgba(0,217,255,0.5),
-      0 0 50px rgba(0,255,204,0.4);
-  }
-
+  from{ box-shadow:0 0 10px rgba(0,217,255,0.4); }
+  to{ box-shadow:0 0 25px rgba(0,255,204,0.8), 0 0 45px rgba(0,217,255,0.4); }
 }
 
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
   text-align:center;
@@ -177,21 +143,7 @@ header span{
   outline:none;
   background:#162033;
   color:white;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
-  transition:0.3s;
 }
-
-.search-box input:focus{
-  box-shadow:
-    0 0 10px rgba(0,217,255,0.6),
-    0 0 25px rgba(0,217,255,0.3);
-}
-
-.search-box input::placeholder{
-  color:#bdbdbd;
-}
-
-/* SEARCH RESULTS */
 
 .search-results{
   width:430px;
@@ -200,7 +152,6 @@ header span{
   background:#162033;
   border-radius:12px;
   overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.4);
 }
 
 .result-item{
@@ -209,7 +160,6 @@ header span{
   color:white;
   text-decoration:none;
   border-bottom:1px solid rgba(255,255,255,0.08);
-  transition:0.3s;
 }
 
 .result-item:hover{
@@ -217,27 +167,23 @@ header span{
   color:black;
 }
 
-/* MAIN CONTAINER */
+/* =========================
+   CARDS
+========================= */
 
 .container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
   padding:40px 25px;
-  justify-items:center;
 }
-
-/* CARD LINK */
 
 .card-link{
   text-decoration:none;
   color:white;
-  width:100%;
   display:flex;
   justify-content:center;
 }
-
-/* CARD */
 
 .card{
   width:100%;
@@ -246,163 +192,66 @@ header span{
   border-radius:20px;
   overflow:hidden;
   text-align:center;
-  transition:0.35s;
-  box-shadow:0 5px 14px rgba(0,0,0,0.5);
-  border:1px solid rgba(255,255,255,0.05);
-  position:relative;
+  transition:0.3s;
 }
-
-/* CARD HOVER */
 
 .card:hover{
   transform:translateY(-10px) scale(1.02);
-  box-shadow:
-    0 0 18px rgba(0,217,255,0.5),
-    0 0 40px rgba(0,217,255,0.2);
 }
 
-/* CARD IMAGES */
-
-.category-image,
-.fish-image,
 .card img{
   width:100%;
   height:220px;
   object-fit:cover;
-  display:block;
-  background:#0f172a;
-  transition:0.4s;
 }
 
-.card:hover img{
-  transform:scale(1.04);
-}
-
-/* CARD TITLE */
-
-.card h2{
-  font-size:25px;
-  margin:18px 0 8px;
-  color:#00d9ff;
-  padding:0 12px;
-}
-
-/* CARD TEXT */
-
-.card p{
-  font-size:16px;
-  color:#d6d6d6;
-  padding:0 15px 20px;
-  line-height:1.6;
-}
-
-/* PRICE */
-
-.price{
-  color:#00ff99;
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
-
-/* BUTTON */
-
-button{
-  margin-bottom:18px;
-  padding:12px 18px;
-  border:none;
-  border-radius:10px;
-  background:linear-gradient(135deg,#00d9ff,#00ffcc);
-  color:black;
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-  box-shadow:
-    0 0 15px rgba(0,217,255,0.5),
-    0 0 30px rgba(0,255,204,0.3);
-}
-
-/* INFO SECTION */
+/* =========================
+   INFO SECTION
+========================= */
 
 .info-section{
   margin:45px 25px;
   padding:35px;
   background:#162033;
   border-radius:22px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.45);
 }
 
 .info-section h2{
   color:#00d9ff;
-  margin-bottom:16px;
-  font-size:30px;
 }
 
 .info-section p,
 .info-section li{
   color:#d6d6d6;
   line-height:1.9;
-  font-size:17px;
 }
 
-.info-section ul{
-  padding-left:25px;
-}
-
-.info-section a{
-  color:#00ff99;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.info-section a:hover{
-  text-decoration:underline;
-}
-
-/* WHATSAPP BOX */
+/* =========================
+   WHATSAPP
+========================= */
 
 .whatsapp-box{
   display:flex;
-  align-items:center;
   gap:25px;
   flex-wrap:wrap;
-  margin-bottom:35px;
 }
-
-/* QR */
 
 .qr{
   width:190px;
   border-radius:16px;
-  box-shadow:
-    0 0 12px rgba(0,217,255,0.4);
 }
-
-/* WHATSAPP BUTTON */
 
 .wa-link a{
   display:inline-block;
-  margin-top:12px;
   padding:14px 24px;
-  border-radius:12px;
   background:#25D366;
   color:white;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
+  border-radius:12px;
 }
 
-.wa-link a:hover{
-  background:#1ebe5d;
-  transform:scale(1.05);
-}
-
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   text-align:center;
@@ -410,16 +259,13 @@ footer{
   background:#162033;
   margin-top:50px;
   color:#d6d6d6;
-  font-size:16px;
-  letter-spacing:1px;
 }
 
-/* ========================= */
-/* AQUATIPSAI CHATBOT */
-/* ========================= */
+/* =========================
+   CHATBOT
+========================= */
 
 .chatbot-button{
-
   position:fixed;
   bottom:25px;
   right:25px;
@@ -427,41 +273,15 @@ footer{
   height:70px;
   border-radius:50%;
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
-  color:#04131f;
-  font-size:34px;
   display:flex;
   justify-content:center;
   align-items:center;
+  font-size:32px;
   cursor:pointer;
   z-index:9999;
-  font-weight:bold;
-  box-shadow:
-    0 0 15px rgba(0,217,255,0.7),
-    0 0 35px rgba(0,217,255,0.3);
-  animation:chatGlow 2s infinite alternate;
-
 }
-
-@keyframes chatGlow{
-
-  from{
-    box-shadow:
-      0 0 10px #00d9ff,
-      0 0 25px rgba(0,217,255,0.4);
-  }
-
-  to{
-    box-shadow:
-      0 0 20px #00ffcc,
-      0 0 40px rgba(0,255,204,0.5);
-  }
-
-}
-
-/* CHAT CONTAINER */
 
 .chatbot-container{
-
   position:fixed;
   bottom:105px;
   right:25px;
@@ -469,139 +289,78 @@ footer{
   height:560px;
   background:#162033;
   border-radius:22px;
-  overflow:hidden;
   display:none;
   flex-direction:column;
-  z-index:9999;
-  border:1px solid rgba(0,217,255,0.3);
-  box-shadow:
-    0 0 20px rgba(0,217,255,0.3),
-    0 0 45px rgba(0,0,0,0.6);
-
+  overflow:hidden;
 }
 
-/* CHAT HEADER */
-
 .chat-header{
-
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
-  color:#04131f;
   padding:18px;
-  font-size:22px;
   font-weight:bold;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-
 }
 
-/* CHAT MESSAGES */
-
 .chat-messages{
-
   flex:1;
   padding:16px;
   overflow-y:auto;
+  background:#0f172a;
   display:flex;
   flex-direction:column;
-  gap:14px;
-  background:#0f172a;
-
+  gap:12px;
 }
 
-/* BOT MESSAGE */
-
 .bot-message{
-
   background:#1e293b;
-  color:white;
   padding:14px;
   border-radius:16px;
   max-width:85%;
-  line-height:1.7;
-  font-size:15px;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
-
 }
 
-/* USER MESSAGE */
-
 .user-message{
-
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
   color:#04131f;
   padding:14px;
   border-radius:16px;
   align-self:flex-end;
   max-width:85%;
-  font-weight:bold;
-  font-size:15px;
-
 }
 
-/* INPUT AREA */
-
 .chat-input-area{
-
   display:flex;
   gap:10px;
   padding:14px;
   background:#162033;
-  border-top:1px solid rgba(255,255,255,0.05);
-
 }
 
-/* INPUT */
-
 .chat-input-area input{
-
   flex:1;
   padding:13px;
   border:none;
   border-radius:12px;
-  outline:none;
   background:#0f172a;
   color:white;
-  font-size:15px;
-
 }
-
-.chat-input-area input::placeholder{
-  color:#bdbdbd;
-}
-
-/* SEND BUTTON */
 
 .chat-input-area button{
-
-  margin:0;
   padding:12px 16px;
   border:none;
   border-radius:12px;
   background:linear-gradient(135deg,#00d9ff,#00ffcc);
-  color:#04131f;
-  font-weight:bold;
   cursor:pointer;
-
 }
 
-.chat-input-area button:hover{
-
-  transform:scale(1.05);
-
-}
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
   header{
     flex-direction:column;
     text-align:center;
-  }
-
-  header div{
-    align-items:center;
   }
 
   .logo{
@@ -613,57 +372,18 @@ footer{
     font-size:30px;
   }
 
-  .tagline{
-    font-size:14px;
-  }
-
-  .top-section{
-    padding-top:40px;
-  }
-
   .top-section h1{
     font-size:34px;
   }
 
-  .top-section p{
-    font-size:16px;
-  }
-
-  .glow-box{
-    width:90%;
-    font-size:15px;
-    padding:16px;
-  }
-
-  .container{
-    grid-template-columns:1fr;
-    padding:20px;
-  }
-
-  .card{
-    max-width:95%;
-  }
-
-  .category-image,
-  .fish-image,
   .card img{
     height:190px;
-  }
-
-  .whatsapp-box{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .qr{
-    width:150px;
   }
 
   .chatbot-container{
     width:92%;
     right:4%;
     height:75vh;
-    bottom:90px;
   }
 
   .chatbot-button{
@@ -671,5 +391,4 @@ footer{
     height:62px;
     font-size:28px;
   }
-
 }

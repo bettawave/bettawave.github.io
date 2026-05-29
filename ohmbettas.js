@@ -1,9 +1,23 @@
-```javascript id="t6ks1s"
+```javascript id="a4n8zv"
 const fishes = [
 
   {
-    name: "OHM Betta",
-    price: "₹300 onwards",
+    name: "Regular OHM Betta",
+
+    male: "₹250 onwards",
+    female: "₹150 onwards",
+
+    images: [
+      "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
+      "https://i.ibb.co/nqRSLg6V/dt2.jpg"
+    ]
+  },
+
+  {
+    name: "Candy OHM Betta",
+
+    male: "₹400 onwards",
+    female: "₹250 onwards",
 
     images: [
       "https://i.ibb.co/F4qCP9Bj/dt1.jpg",
@@ -33,7 +47,9 @@ fishes.forEach(fish => {
 
       <h2>${fish.name}</h2>
 
-      <p>${fish.price}</p>
+      <p><strong>Male:</strong> ${fish.male}</p>
+
+      <p><strong>Female:</strong> ${fish.female}</p>
 
       <div class="image-gallery">
 

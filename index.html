@@ -21,7 +21,7 @@
     <span>Betta Wave Kolkata</span>
 
     <p class="tagline">
-      ✨ We Breed • We Import • We Sell ✨
+      We Breed • We Import • We Sell
     </p>
   </div>
 
@@ -37,12 +37,12 @@
     Top quality fishes, shrimps, snails and aquatic plants.
   </p>
 
-  <!-- GLOWING NOTICE -->
+  <!-- GLOWING MESSAGE -->
 
   <div class="glow-box">
 
-    ⚡ Fish prices may vary depending on availability and quality.
-    Before ordering, kindly contact the owner on WhatsApp for confirmation.
+    ⚡ Fish prices may vary depending on availability and quality.  
+    Before placing your order, kindly contact the owner on WhatsApp for confirmation and latest stock updates.
 
   </div>
 
@@ -152,57 +152,84 @@
 
   </div>
 
+  <!-- SOCIAL LINKS -->
+
   <h2>Connect With Us</h2>
 
   <p>
+
     📘 Facebook Profile:
+
     <a href="https://www.facebook.com/profile.php?id=61580582362168" target="_blank">
+
       Click Here
+
     </a>
+
   </p>
 
   <p>
+
     📄 Facebook Page:
+
     <a href="https://www.facebook.com/profile.php?id=61572031530480" target="_blank">
+
       Click Here
+
     </a>
+
   </p>
 
   <p>
+
     ▶️ YouTube Channel:
+
     <a href="https://youtube.com/@bettawavekolkata?si=Cvyk3IniHwGrrgjf" target="_blank">
+
       Subscribe Here
+
     </a>
+
   </p>
+
+  <!-- CONTACT -->
 
   <h2>Contact Information</h2>
 
   <p>
+
     📞 9147731025, 8104266402 (WhatsApp Only)
+
   </p>
 
   <p>
+
     📧 soumajinth@gmail.com
+
   </p>
+
+  <!-- IMPORTANT -->
 
   <h2>Important Information</h2>
 
   <ul>
 
     <li>
+
       The images are only for reference. There is no guarantee that you will get exactly the same looking fish.
+
     </li>
 
     <li>
-      Prices vary based on quality and availability.
+
+      Prices vary based on quality. We only provide healthy fishes.
+
     </li>
 
     <li>
-      Before placing an order, kindly contact us on WhatsApp.
-    </li>
 
-    <li>
       For better communication and updates, join our WhatsApp group above.
+
     </li>
 
   </ul>
@@ -216,6 +243,61 @@
   © 2026 Betta Wave Kolkata
 
 </footer>
+
+<!-- ========================= -->
+<!-- AQUATIPSAI CHATBOT -->
+<!-- ========================= -->
+
+<div class="chatbot-button" onclick="toggleChat()">
+
+  🐠
+
+</div>
+
+<div class="chatbot-container" id="chatbot">
+
+  <div class="chat-header">
+
+    AquatipsAI
+
+    <span onclick="toggleChat()" style="cursor:pointer;">✖</span>
+
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+
+    <div class="bot-message">
+      Hello 👋 <br><br>
+      I am <b>AquatipsAI</b>.  
+      Ask me anything about:
+      <br><br>
+      • Betta care  
+      • Fish breeding  
+      • Aquarium setup  
+      • Guppies  
+      • Snails  
+      • Shrimps  
+      • Water parameters  
+      • Fish food
+    </div>
+
+  </div>
+
+  <div class="chat-input-area">
+
+    <input
+      type="text"
+      id="userInput"
+      placeholder="Ask AquatipsAI..."
+    >
+
+    <button onclick="sendMessage()">
+      Send
+    </button>
+
+  </div>
+
+</div>
 
 <!-- SEARCH SCRIPT -->
 
@@ -259,19 +341,168 @@ searchInput.addEventListener("keyup", function(){
     `<div class="result-item">❌ Fish not found</div>`;
 
     return;
+
   }
 
   filtered.forEach(fish => {
 
     searchResults.innerHTML += `
+
       <a href="${fish.link}" class="result-item">
+
         ${fish.name}
+
       </a>
+
     `;
 
   });
 
 });
+
+</script>
+
+<!-- CHATBOT SCRIPT -->
+
+<script>
+
+function toggleChat(){
+
+  const chatbot =
+  document.getElementById("chatbot");
+
+  if(chatbot.style.display === "flex"){
+
+    chatbot.style.display = "none";
+
+  }
+
+  else{
+
+    chatbot.style.display = "flex";
+
+  }
+
+}
+
+function sendMessage(){
+
+  const input =
+  document.getElementById("userInput");
+
+  const messages =
+  document.getElementById("chatMessages");
+
+  let text = input.value.trim();
+
+  if(text === "") return;
+
+  messages.innerHTML += `
+
+    <div class="user-message">
+      ${text}
+    </div>
+
+  `;
+
+  let reply =
+  getBotReply(text.toLowerCase());
+
+  messages.innerHTML += `
+
+    <div class="bot-message">
+      ${reply}
+    </div>
+
+  `;
+
+  input.value = "";
+
+  messages.scrollTop =
+  messages.scrollHeight;
+
+}
+
+function getBotReply(msg){
+
+  if(msg.includes("breed betta")){
+
+    return `
+    <b>How to breed Betta fishes:</b><br><br>
+
+    1. Keep male and female separately.<br>
+    2. Condition them with protein food.<br>
+    3. Use shallow breeding tank.<br>
+    4. Male makes bubble nest.<br>
+    5. Introduce female carefully.<br>
+    6. After spawning remove female.<br>
+    7. Male cares for eggs.<br>
+    8. Remove male after fry become free swimming.
+    `;
+
+  }
+
+  else if(msg.includes("water change")){
+
+    return `
+    Weekly 25-30% water changes are best for most aquariums.
+    Always use anti-chlorine conditioner.
+    `;
+
+  }
+
+  else if(msg.includes("betta care")){
+
+    return `
+    Bettas prefer:
+    <br><br>
+    • Warm water (26°C)<br>
+    • Low flow filter<br>
+    • High protein diet<br>
+    • Clean aquarium<br>
+    • No fin nippers
+    `;
+
+  }
+
+  else if(msg.includes("guppy")){
+
+    return `
+    Guppies prefer hard water and breed very fast.
+    Feed high quality flakes and maintain clean water.
+    `;
+
+  }
+
+  else if(msg.includes("shrimp")){
+
+    return `
+    Shrimps require stable water parameters.
+    Avoid copper medicines in shrimp tanks.
+    `;
+
+  }
+
+  else if(msg.includes("snail")){
+
+    return `
+    Snails help clean algae and leftover food.
+    Mystery snails and nerites are beginner friendly.
+    `;
+
+  }
+
+  else{
+
+    return `
+    Sorry 😅<br><br>
+    I currently know mainly about aquarium fishes,
+    shrimps, snails, fish care and breeding.
+    `;
+
+  }
+
+}
 
 </script>
 

@@ -2,21 +2,21 @@ const ohmbettas = [
 
   {
     name: "Regular OHM Male",
-    image: "https://i.ibb.co/60Qx8cpb/ohm1.jpg",
+    image: "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
     price: "₹300 / piece",
     cartPrice: 300
   },
 
   {
     name: "Regular OHM Female",
-    image: "https://i.ibb.co/fGP7kn9Y/ohm2.jpg",
+    image: "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
     price: "₹150 / piece",
     cartPrice: 150
   },
 
   {
     name: "Candy OHM Male",
-    image: "https://i.ibb.co/BHp1WVJp/ohm3.jpg",
+    image: "https://i.ibb.co/LmM78FH/ohm4.jpg",
     price: "₹500 / piece",
     cartPrice: 500
   },
@@ -32,14 +32,17 @@ const ohmbettas = [
 
 const container = document.getElementById("ohm-container");
 
+let output = "";
+
 ohmbettas.forEach(item => {
 
-  container.innerHTML += `
+  output += `
 
     <div class="card">
 
       <img
         src="${item.image}"
+        alt="${item.name}"
         class="fish-image"
       >
 
@@ -47,9 +50,7 @@ ohmbettas.forEach(item => {
 
         <h2>${item.name}</h2>
 
-        <p class="price">
-          ${item.price}
-        </p>
+        <p class="price">${item.price}</p>
 
         <button onclick="addToCart('${item.name}', ${item.cartPrice})">
           Add to Cart
@@ -62,6 +63,11 @@ ohmbettas.forEach(item => {
   `;
 
 });
+
+container.innerHTML = output;
+
+
+// CART FUNCTION
 
 function addToCart(name, price){
 
@@ -78,5 +84,5 @@ function addToCart(name, price){
     JSON.stringify(cart)
   );
 
-  alert(name + " added to cart");
+  alert(name + " added to cart!");
 }
